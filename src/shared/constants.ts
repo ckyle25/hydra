@@ -11,6 +11,7 @@ export enum Downloader {
   FuckingFast,
   VikingFile,
   Rootz,
+  Direct,
 }
 
 export enum DownloadSourceStatus {

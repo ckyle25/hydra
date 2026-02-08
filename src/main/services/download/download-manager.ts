@@ -588,6 +588,8 @@ export class DownloadManager {
         return this.getVikingFileDownloadOptions(download, resumingFilename);
       case Downloader.Rootz:
         return this.getRootzDownloadOptions(download, resumingFilename);
+      case Downloader.Direct:
+        return this.getDirectDownloadOptions(download, resumingFilename);
       default:
         return null;
     }
@@ -792,6 +794,22 @@ export class DownloadManager {
     );
   }
 
+  private static async getDirectDownloadOptions(
+    download: Download,
+    resumingFilename?: string
+  ) {
+    const filename = this.resolveFilename(
+      resumingFilename,
+      download.uri,
+      download.uri
+    );
+    return this.buildDownloadOptions(
+      download.uri,
+      download.downloadPath,
+      filename
+    );
+  }
+
   private static async getDownloadPayload(download: Download) {
     const downloadId = levelKeys.game(download.shop, download.objectId);
 
@@ -948,6 +966,14 @@ export class DownloadManager {
           url: downloadUrl,
           save_path: download.downloadPath,
         };
+      }
+      case Downloader.Direct: {
+        return this.createDownloadPayload(
+          download.uri,
+          download.uri,
+          downloadId,
+          download.downloadPath
+        );
       }
       default:
         return undefined;

@@ -164,6 +164,10 @@ export const getDownloadersForUri = (uri: string) => {
     ];
   }
 
+  if (uri.startsWith("https://") || uri.startsWith("http://")) {
+    return [Downloader.Direct];
+  }
+
   return [];
 };
 
