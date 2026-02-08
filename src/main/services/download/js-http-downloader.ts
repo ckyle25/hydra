@@ -25,7 +25,8 @@ export interface JsHttpDownloaderOptions {
 const MAX_RETRY_ATTEMPTS = 10;
 const INITIAL_RETRY_DELAY_MS = 1000;
 const MAX_RETRY_DELAY_MS = 15000;
-const STALL_TIMEOUT_MS = 8000;
+const INITIAL_RESPONSE_TIMEOUT_MS = 30000;
+const STALL_TIMEOUT_MS = 15000;
 const STALL_CHECK_INTERVAL_MS = 2000;
 
 const RETRYABLE_ERROR_CODES = new Set([
@@ -61,6 +62,7 @@ export class JsHttpDownloader {
   private stallCheckInterval: NodeJS.Timeout | null = null;
   private isPaused = false;
   private isStallRetry = false;
+  private hasReceivedData = false;
 
   async startDownload(options: JsHttpDownloaderOptions): Promise<void> {
     if (this.isDownloading) {
@@ -85,6 +87,7 @@ export class JsHttpDownloader {
       this.status = "active";
       this.isDownloading = true;
       this.isStallRetry = false;
+      this.hasReceivedData = false;
       this.lastDataReceivedAt = Date.now();
 
       const { url, savePath, filename, headers = {} } = this.currentOptions;
@@ -131,7 +134,11 @@ export class JsHttpDownloader {
       }
 
       const timeSinceLastData = Date.now() - this.lastDataReceivedAt;
-      if (timeSinceLastData > STALL_TIMEOUT_MS) {
+      const timeoutMs = this.hasReceivedData
+        ? STALL_TIMEOUT_MS
+        : INITIAL_RESPONSE_TIMEOUT_MS;
+
+      if (timeSinceLastData > timeoutMs) {
         logger.log(
           `[JsHttpDownloader] Download stalled (no data for ${Math.round(timeSinceLastData / 1000)}s), triggering retry`
         );
@@ -372,6 +379,7 @@ export class JsHttpDownloader {
     reader: ReadableStreamDefaultReader<Uint8Array>
   ): Readable {
     const onChunk = (length: number) => {
+      this.hasReceivedData = true;
       this.bytesDownloaded += length;
       this.lastDataReceivedAt = Date.now();
       this.updateSpeed();
