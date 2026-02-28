@@ -1,4 +1,5 @@
 import { appVersion, defaultDownloadsPath, isStaging } from "@main/constants";
+import { PythonRPC } from "@main/services/python-rpc";
 import { ipcMain } from "electron";
 
 import "./auth";
@@ -24,3 +25,4 @@ ipcMain.handle("getVersion", () => appVersion);
 ipcMain.handle("isStaging", () => isStaging);
 ipcMain.handle("isPortableVersion", () => isPortableVersion());
 ipcMain.handle("getDefaultDownloadsPath", () => defaultDownloadsPath);
+ipcMain.handle("isPythonRpcAvailable", () => PythonRPC.isAvailable());

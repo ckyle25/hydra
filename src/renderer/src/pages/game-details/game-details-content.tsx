@@ -20,6 +20,12 @@ import { useSubscription } from "@renderer/hooks/use-subscription";
 import "./game-details.scss";
 import "./hero.scss";
 
+const isSelfHostedCloudSaveEnabled = ["1", "true"].includes(
+  String(
+    import.meta.env.RENDERER_VITE_SELF_HOSTED_CLOUD_SAVE ?? ""
+  ).toLowerCase()
+);
+
 const processMediaElements = (document: Document) => {
   const $images = Array.from(document.querySelectorAll("img"));
   $images.forEach(($image) => {
@@ -119,7 +125,7 @@ export function GameDetailsContent() {
       return;
     }
 
-    if (!hasActiveSubscription) {
+    if (!hasActiveSubscription && !isSelfHostedCloudSaveEnabled) {
       showHydraCloudModal("backup");
       return;
     }

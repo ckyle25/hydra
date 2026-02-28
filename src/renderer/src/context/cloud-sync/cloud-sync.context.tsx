@@ -10,6 +10,12 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 
+const isSelfHostedCloudSaveEnabled = ["1", "true"].includes(
+  String(
+    import.meta.env.RENDERER_VITE_SELF_HOSTED_CLOUD_SAVE ?? ""
+  ).toLowerCase()
+);
+
 export enum CloudSyncState {
   New,
   Different,
@@ -110,7 +116,7 @@ export function CloudSyncContextProvider({
 
     const results = await window.electron.hydraApi
       .get<GameArtifact[]>(`/profile/games/artifacts?${params.toString()}`, {
-        needsSubscription: true,
+        needsSubscription: !isSelfHostedCloudSaveEnabled,
       })
       .catch(() => {
         return [];

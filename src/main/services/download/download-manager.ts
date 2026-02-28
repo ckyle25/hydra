@@ -145,11 +145,21 @@ export class DownloadManager {
     return downloader !== Downloader.Torrent;
   }
 
+  private static canUseDownloaderWithoutPython(downloader: Downloader): boolean {
+    return downloader === Downloader.Direct;
+  }
+
+  private static ensureDownloaderAvailable(downloader: Downloader) {
+    if (!PythonRPC.isAvailable() && !this.canUseDownloaderWithoutPython(downloader)) {
+      throw new Error("download_error");
+    }
+  }
+
   public static async startRPC(
     download?: Download,
     downloadsToSeed?: Download[]
   ) {
-    PythonRPC.spawn(
+    const started = await PythonRPC.spawn(
       download?.status === "active"
         ? await this.getDownloadPayload(download).catch((err) => {
             logger.error("Error getting download payload", err);
@@ -164,9 +174,11 @@ export class DownloadManager {
       }))
     );
 
-    if (download) {
+    if (started && download) {
       this.downloadingGameId = levelKeys.game(download.shop, download.objectId);
     }
+
+    return started;
   }
 
   private static async getDownloadStatusFromJs(): Promise<DownloadProgress | null> {
@@ -250,6 +262,8 @@ export class DownloadManager {
   }
 
   private static async getDownloadStatusFromRpc(): Promise<DownloadProgress | null> {
+    if (!PythonRPC.isAvailable()) return null;
+
     const response = await PythonRPC.rpc.get<LibtorrentPayload | null>(
       "/status"
     );
@@ -461,6 +475,8 @@ export class DownloadManager {
   }
 
   public static async getSeedStatus() {
+    if (!PythonRPC.isAvailable()) return;
+
     const seedStatus = await PythonRPC.rpc
       .get<LibtorrentPayload[] | []>("/seed-status")
       .then((res) => res.data);
@@ -981,6 +997,8 @@ export class DownloadManager {
   }
 
   static async validateDownloadUrl(download: Download): Promise<void> {
+    this.ensureDownloaderAvailable(download.downloader);
+
     const useJsDownloader = await this.shouldUseJsDownloader();
     const isHttp = this.isHttpDownloader(download.downloader);
 
@@ -995,6 +1013,8 @@ export class DownloadManager {
   }
 
   static async startDownload(download: Download) {
+    this.ensureDownloaderAvailable(download.downloader);
+
     const useJsDownloader = await this.shouldUseJsDownloader();
     const isHttp = this.isHttpDownloader(download.downloader);
     const downloadId = levelKeys.game(download.shop, download.objectId);

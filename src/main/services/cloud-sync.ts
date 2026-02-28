@@ -16,6 +16,10 @@ import { formatDate, SubscriptionRequiredError } from "@shared";
 import i18next, { t } from "i18next";
 import { SystemPath } from "./system-path";
 
+const isSelfHostedCloudSaveEnabled = ["1", "true"].includes(
+  String(import.meta.env.MAIN_VITE_SELF_HOSTED_CLOUD_SAVE ?? "").toLowerCase()
+);
+
 export class CloudSync {
   public static getWindowsLikeUserProfilePath(winePrefixPath?: string | null) {
     if (process.platform === "linux") {
@@ -106,15 +110,17 @@ export class CloudSync {
     downloadOptionTitle: string | null,
     label?: string
   ) {
-    const hasActiveSubscription = await db
-      .get<string, User>(levelKeys.user, { valueEncoding: "json" })
-      .then((user) => {
-        const expiresAt = new Date(user?.subscription?.expiresAt ?? 0);
-        return expiresAt > new Date();
-      });
+    if (!isSelfHostedCloudSaveEnabled) {
+      const hasActiveSubscription = await db
+        .get<string, User>(levelKeys.user, { valueEncoding: "json" })
+        .then((user) => {
+          const expiresAt = new Date(user?.subscription?.expiresAt ?? 0);
+          return expiresAt > new Date();
+        });
 
-    if (!hasActiveSubscription) {
-      throw new SubscriptionRequiredError();
+      if (!hasActiveSubscription) {
+        throw new SubscriptionRequiredError();
+      }
     }
 
     const game = await gamesSublevel.get(levelKeys.game(shop, objectId));

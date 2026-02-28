@@ -307,6 +307,7 @@ declare global {
     isStaging: () => Promise<boolean>;
     ping: () => string;
     getDefaultDownloadsPath: () => Promise<string>;
+    isPythonRpcAvailable: () => Promise<boolean>;
     isPortableVersion: () => Promise<boolean>;
     showOpenDialog: (
       options: Electron.OpenDialogOptions

@@ -114,6 +114,13 @@ const findGamePathByProcess = async (
 };
 
 const getSystemProcessMap = async () => {
+  if (!PythonRPC.isAvailable()) {
+    return {
+      processMap: new Map<string, Set<string>>(),
+      winePrefixMap: new Map<string, string>(),
+    };
+  }
+
   const processes =
     (await PythonRPC.rpc.get<ProcessPayload[] | null>("/process-list")).data ||
     [];

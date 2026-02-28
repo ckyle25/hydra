@@ -70,6 +70,7 @@ export function DownloadSettingsModal({
     null
   );
   const [showRealDebridModal, setShowRealDebridModal] = useState(false);
+  const [isPythonRpcAvailable, setIsPythonRpcAvailable] = useState(true);
 
   const { isFeatureEnabled, Feature } = useFeature();
 
@@ -94,6 +95,10 @@ export function DownloadSettingsModal({
     if (visible) {
       getDiskFreeSpace(selectedPath);
       checkFolderWritePermission(selectedPath);
+      window.electron
+        .isPythonRpcAvailable()
+        .then((isAvailable) => setIsPythonRpcAvailable(isAvailable))
+        .catch(() => setIsPythonRpcAvailable(false));
     }
   }, [visible, checkFolderWritePermission, selectedPath]);
 
@@ -141,6 +146,9 @@ export function DownloadSettingsModal({
     };
 
     return allDownloaders
+      .filter((downloader) =>
+        isPythonRpcAvailable ? true : downloader === Downloader.Direct
+      )
       .filter((downloader) => downloader !== Downloader.Hydra) // Temporarily comment out Nimbus
       .map((downloader) => {
         const status = downloaderMap.get(downloader);
@@ -174,6 +182,7 @@ export function DownloadSettingsModal({
     userPreferences?.torBoxApiToken,
     isFeatureEnabled,
     Feature,
+    isPythonRpcAvailable,
   ]);
 
   const getDefaultDownloader = useCallback(

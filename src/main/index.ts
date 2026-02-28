@@ -20,10 +20,13 @@ import { loadState } from "./main";
 
 const { autoUpdater } = updater;
 
+const updaterOwner = import.meta.env.MAIN_VITE_UPDATER_OWNER || "ckyle25";
+const updaterRepo = import.meta.env.MAIN_VITE_UPDATER_REPO || "hydra";
+
 autoUpdater.setFeedURL({
   provider: "github",
-  owner: "hydralauncher",
-  repo: "hydra",
+  owner: updaterOwner,
+  repo: updaterRepo,
 });
 
 autoUpdater.logger = logger;

@@ -9,7 +9,7 @@ import path from "node:path";
 
 import { pythonRpcLogger } from "./logger";
 import { Readable } from "node:stream";
-import { app, dialog } from "electron";
+import { app } from "electron";
 import { db, levelKeys } from "@main/level";
 
 interface GamePayload {
@@ -42,6 +42,7 @@ export class PythonRPC {
   });
 
   private static pythonProcess: cp.ChildProcess | null = null;
+  private static available = false;
 
   private static logStderr(readable: Readable | null) {
     if (!readable) return;
@@ -120,11 +121,11 @@ export class PythonRPC {
         err instanceof Error && err.message
           ? err.message
           : "Unknown error while selecting RPC port";
-      dialog.showErrorBox(
-        "RPC Error",
-        `Failed to select an available port for the download service.\n\n${message}`
+      pythonRpcLogger.error(
+        `Failed to select an available port for RPC service: ${message}`
       );
-      throw err;
+      this.available = false;
+      return false;
     }
 
     this.updateRpcPort(port);
@@ -147,13 +148,11 @@ export class PythonRPC {
       );
 
       if (!fs.existsSync(binaryPath)) {
-        dialog.showErrorBox(
-          "Fatal",
-          "Hydra Python Instance binary not found. Please check if it has been removed by Windows Defender."
+        pythonRpcLogger.error(
+          "Hydra Python Instance binary not found. Running without Python RPC."
         );
-
-        app.quit();
-        return;
+        this.available = false;
+        return false;
       }
 
       const childProcess = cp.spawn(binaryPath, commonArgs, {
@@ -162,6 +161,16 @@ export class PythonRPC {
       });
 
       this.logStderr(childProcess.stderr);
+      childProcess.on("error", (err) => {
+        pythonRpcLogger.error("Python RPC process error", err);
+        this.available = false;
+      });
+      childProcess.on("exit", (code, signal) => {
+        pythonRpcLogger.warn(
+          `Python RPC process exited (code=${code}, signal=${signal})`
+        );
+        this.available = false;
+      });
 
       this.pythonProcess = childProcess;
     } else {
@@ -178,11 +187,23 @@ export class PythonRPC {
       });
 
       this.logStderr(childProcess.stderr);
+      childProcess.on("error", (err) => {
+        pythonRpcLogger.error("Python RPC process error", err);
+        this.available = false;
+      });
+      childProcess.on("exit", (code, signal) => {
+        pythonRpcLogger.warn(
+          `Python RPC process exited (code=${code}, signal=${signal})`
+        );
+        this.available = false;
+      });
 
       this.pythonProcess = childProcess;
     }
 
     this.rpc.defaults.headers.common["x-hydra-rpc-password"] = rpcPassword;
+    this.available = true;
+    return true;
   }
 
   public static kill() {
@@ -191,5 +212,10 @@ export class PythonRPC {
       this.pythonProcess.kill();
       this.pythonProcess = null;
     }
+    this.available = false;
+  }
+
+  public static isAvailable() {
+    return this.available;
   }
 }
