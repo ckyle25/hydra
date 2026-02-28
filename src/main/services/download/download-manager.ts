@@ -145,12 +145,17 @@ export class DownloadManager {
     return downloader !== Downloader.Torrent;
   }
 
-  private static canUseDownloaderWithoutPython(downloader: Downloader): boolean {
+  private static canUseDownloaderWithoutPython(
+    downloader: Downloader
+  ): boolean {
     return downloader === Downloader.Direct;
   }
 
   private static ensureDownloaderAvailable(downloader: Downloader) {
-    if (!PythonRPC.isAvailable() && !this.canUseDownloaderWithoutPython(downloader)) {
+    if (
+      !PythonRPC.isAvailable() &&
+      !this.canUseDownloaderWithoutPython(downloader)
+    ) {
       throw new Error("download_error");
     }
   }
