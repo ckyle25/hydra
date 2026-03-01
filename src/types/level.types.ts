@@ -132,6 +132,7 @@ export interface UserPreferences {
   enableNewDownloadOptionsBadges?: boolean;
   useNativeHttpDownloader?: boolean;
   createStartMenuShortcut?: boolean;
+  selfHostedCloudPath?: string | null;
 }
 
 export interface ScreenState {

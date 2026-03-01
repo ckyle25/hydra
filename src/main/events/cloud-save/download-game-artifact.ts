@@ -1,4 +1,4 @@
-import { CloudSync, HydraApi, logger, WindowManager } from "@main/services";
+import { CloudSync, HydraApi, logger, SelfHostedCloud, WindowManager } from "@main/services";
 import fs from "node:fs";
 import * as tar from "tar";
 import { registerEvent } from "../register-event";
@@ -99,19 +99,9 @@ const downloadGameArtifact = async (
   try {
     const game = await gamesSublevel.get(levelKeys.game(shop, objectId));
 
-    const {
-      downloadUrl,
-      objectKey,
-      homeDir,
-      winePrefixPath: artifactWinePrefixPath,
-    } = await HydraApi.post<{
-      downloadUrl: string;
-      objectKey: string;
-      homeDir: string;
-      winePrefixPath: string | null;
-    }>(`/profile/games/artifacts/${gameArtifactId}/download`);
-
-    const zipLocation = path.join(SystemPath.getPath("userData"), objectKey);
+    let zipLocation = "";
+    let homeDir = "";
+    let artifactWinePrefixPath: string | null = null;
     const backupPath = path.join(backupsPath, `${shop}-${objectId}`);
 
     if (fs.existsSync(backupPath)) {
@@ -121,46 +111,79 @@ const downloadGameArtifact = async (
       });
     }
 
-    const response = await axios.get(downloadUrl, {
-      responseType: "stream",
-      onDownloadProgress: (progressEvent) => {
-        WindowManager.mainWindow?.webContents.send(
-          `on-backup-download-progress-${objectId}-${shop}`,
-          progressEvent
-        );
-      },
-    });
+    if (SelfHostedCloud.isEnabled()) {
+      const localArtifact = await SelfHostedCloud.getArtifactDownloadInfo(
+        objectId,
+        shop,
+        gameArtifactId
+      );
 
-    const writer = fs.createWriteStream(zipLocation);
+      zipLocation = localArtifact.artifactPath;
+      homeDir = localArtifact.homeDir;
+      artifactWinePrefixPath = localArtifact.artifactWinePrefixPath;
 
-    response.data.pipe(writer);
+      WindowManager.mainWindow?.webContents.send(
+        `on-backup-download-progress-${objectId}-${shop}`,
+        { progress: 1 }
+      );
+    } else {
+      const {
+        downloadUrl,
+        objectKey,
+        homeDir: artifactHomeDir,
+        winePrefixPath,
+      } = await HydraApi.post<{
+        downloadUrl: string;
+        objectKey: string;
+        homeDir: string;
+        winePrefixPath: string | null;
+      }>(`/profile/games/artifacts/${gameArtifactId}/download`);
 
-    writer.on("error", (err) => {
-      logger.error("Failed to write tar file", err);
-      throw err;
-    });
+      homeDir = artifactHomeDir;
+      artifactWinePrefixPath = winePrefixPath;
+      zipLocation = path.join(SystemPath.getPath("userData"), objectKey);
+
+      const response = await axios.get(downloadUrl, {
+        responseType: "stream",
+        onDownloadProgress: (progressEvent) => {
+          WindowManager.mainWindow?.webContents.send(
+            `on-backup-download-progress-${objectId}-${shop}`,
+            progressEvent
+          );
+        },
+      });
+
+      const writer = fs.createWriteStream(zipLocation);
+      response.data.pipe(writer);
+
+      await new Promise<void>((resolve, reject) => {
+        writer.on("error", (err) => {
+          logger.error("Failed to write tar file", err);
+          reject(err);
+        });
+        writer.on("close", () => resolve());
+      });
+    }
 
     fs.mkdirSync(backupPath, { recursive: true });
 
-    writer.on("close", async () => {
-      await tar.x({
-        file: zipLocation,
-        cwd: backupPath,
-      });
-
-      restoreLudusaviBackup(
-        backupPath,
-        objectId,
-        normalizePath(homeDir),
-        game?.winePrefixPath,
-        artifactWinePrefixPath
-      );
-
-      WindowManager.mainWindow?.webContents.send(
-        `on-backup-download-complete-${objectId}-${shop}`,
-        true
-      );
+    await tar.x({
+      file: zipLocation,
+      cwd: backupPath,
     });
+
+    restoreLudusaviBackup(
+      backupPath,
+      objectId,
+      normalizePath(homeDir),
+      game?.winePrefixPath,
+      artifactWinePrefixPath
+    );
+
+    WindowManager.mainWindow?.webContents.send(
+      `on-backup-download-complete-${objectId}-${shop}`,
+      true
+    );
   } catch (err) {
     logger.error("Failed to download game artifact", err);
 

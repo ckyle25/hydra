@@ -252,7 +252,7 @@ function onOpenGame(game: Game) {
         game.shop,
         null,
         CloudSync.getBackupLabel(true)
-      );
+      ).catch((err) => logger.error("Failed to auto upload save", err));
     }
   } else {
     createGame({ ...game, lastTimePlayed: new Date() }).catch(() => {});
@@ -339,7 +339,7 @@ const onCloseGame = (game: Game) => {
         game.shop,
         null,
         CloudSync.getBackupLabel(true)
-      );
+      ).catch((err) => logger.error("Failed to auto upload save", err));
     }
 
     const deltaToSync =

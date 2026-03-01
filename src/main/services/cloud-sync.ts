@@ -15,6 +15,7 @@ import { Ludusavi } from "./ludusavi";
 import { formatDate } from "@shared";
 import i18next, { t } from "i18next";
 import { SystemPath } from "./system-path";
+import { SelfHostedCloud } from "./self-hosted-cloud";
 
 export class CloudSync {
   public static getWindowsLikeUserProfilePath(winePrefixPath?: string | null) {
@@ -115,6 +116,32 @@ export class CloudSync {
     );
 
     const stat = await fs.promises.stat(bundleLocation);
+
+    if (SelfHostedCloud.isEnabled()) {
+      await SelfHostedCloud.saveArtifact({
+        objectId,
+        shop,
+        bundleLocation,
+        artifactLengthInBytes: stat.size,
+        downloadOptionTitle,
+        label: label ?? this.getBackupLabel(false),
+        winePrefixPath: game?.winePrefixPath ?? null,
+        homeDir: this.getWindowsLikeUserProfilePath(game?.winePrefixPath ?? null),
+      });
+
+      WindowManager.mainWindow?.webContents.send(
+        `on-upload-complete-${objectId}-${shop}`,
+        true
+      );
+
+      try {
+        await fs.promises.unlink(bundleLocation);
+      } catch (error) {
+        logger.error("Failed to remove tar file", { bundleLocation, error });
+      }
+
+      return;
+    }
 
     const { uploadUrl } = await HydraApi.post<{
       id: string;

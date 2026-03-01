@@ -116,7 +116,7 @@ export function GameDetailsContent() {
   }, [objectId]);
 
   const handleCloudSaveButtonClick = () => {
-    if (!userDetails) {
+    if (!userDetails && !isSelfHostedCloudSaveEnabled) {
       window.electron.openAuthWindow(AuthPage.SignIn);
       return;
     }

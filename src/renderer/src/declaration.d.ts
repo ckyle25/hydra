@@ -275,6 +275,23 @@ declare global {
       objectId: string,
       shop: GameShop
     ) => Promise<GameArtifact[]>;
+    deleteGameArtifact: (
+      objectId: string,
+      shop: GameShop,
+      gameArtifactId: string
+    ) => Promise<{ ok: boolean }>;
+    toggleArtifactFreeze: (
+      objectId: string,
+      shop: GameShop,
+      gameArtifactId: string,
+      freeze: boolean
+    ) => Promise<{ ok: boolean }>;
+    renameGameArtifact: (
+      objectId: string,
+      shop: GameShop,
+      gameArtifactId: string,
+      label: string
+    ) => Promise<{ ok: boolean }>;
     getGameBackupPreview: (
       objectId: string,
       shop: GameShop
@@ -299,6 +316,28 @@ declare global {
       shop: GameShop,
       cb: (progress: AxiosProgressEvent) => void
     ) => () => Electron.IpcRenderer;
+    selfHostedCloudGetSession: () => Promise<
+      { username: string; signedInAt: string } | null
+    >;
+    selfHostedCloudSignIn: (
+      username: string,
+      password: string
+    ) => Promise<{ username: string }>;
+    selfHostedCloudSignUp: (
+      username: string,
+      password: string
+    ) => Promise<{ username: string }>;
+    selfHostedCloudSignOut: () => Promise<void>;
+    selfHostedCloudGetPathConfig: () => Promise<{
+      path: string;
+      isConfigured: boolean;
+      effectivePath: string;
+    }>;
+    selfHostedCloudSetPath: (pathValue: string | null) => Promise<{
+      path: string;
+      isConfigured: boolean;
+      effectivePath: string;
+    }>;
 
     /* Misc */
     openExternal: (src: string) => Promise<void>;

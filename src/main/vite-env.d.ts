@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   readonly MAIN_VITE_WS_URL: string;
   readonly MAIN_VITE_NIMBUS_API_URL: string;
   readonly MAIN_VITE_LAUNCHER_SUBDOMAIN: string;
+  readonly MAIN_VITE_SELF_HOSTED_CLOUD_PATH: string;
   readonly ELECTRON_RENDERER_URL: string;
 }
 

@@ -3,7 +3,7 @@ import { Button, Modal, ModalProps, TextField } from "@renderer/components";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import type { GameArtifact } from "@types";
-import { cloudSyncContext } from "@renderer/context";
+import { cloudSyncContext, gameDetailsContext } from "@renderer/context";
 import { logger } from "@renderer/logger";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -32,6 +32,7 @@ export function CloudSyncRenameArtifactModal({
   });
 
   const { getGameArtifacts } = useContext(cloudSyncContext);
+  const { objectId, shop } = useContext(gameDetailsContext);
 
   const {
     register,
@@ -58,13 +59,11 @@ export function CloudSyncRenameArtifactModal({
       try {
         if (!artifact) return;
 
-        await window.electron.hydraApi.put(
-          `/profile/games/artifacts/${artifact.id}`,
-          {
-            data: {
-              label: data.label,
-            },
-          }
+        await window.electron.renameGameArtifact(
+          objectId!,
+          shop,
+          artifact.id,
+          data.label
         );
         await getGameArtifacts();
 

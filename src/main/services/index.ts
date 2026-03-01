@@ -22,3 +22,4 @@ export * from "./decky-plugin";
 export * from "./user";
 export * from "./download-sources-checker";
 export * from "./notifications/local-notifications";
+export * from "./self-hosted-cloud";

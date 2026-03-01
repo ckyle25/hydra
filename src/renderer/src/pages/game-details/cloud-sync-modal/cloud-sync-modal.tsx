@@ -1,4 +1,4 @@
-import { Button, Modal, ModalProps } from "@renderer/components";
+import { Button, Modal, ModalProps, TextField } from "@renderer/components";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { cloudSyncContext, gameDetailsContext } from "@renderer/context";
 import "./cloud-sync-modal.scss";
@@ -27,6 +27,8 @@ import { orderBy } from "lodash-es";
 export interface CloudSyncModalProps
   extends Omit<ModalProps, "children" | "title"> {}
 
+const isSelfHostedCloudSaveEnabled = true;
+
 export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
   const [deletingArtifact, setDeletingArtifact] = useState(false);
   const [backupDownloadProgress, setBackupDownloadProgress] =
@@ -34,6 +36,11 @@ export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
   const [artifactToRename, setArtifactToRename] = useState<GameArtifact | null>(
     null
   );
+  const [session, setSession] = useState<{ username: string } | null>(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
+  const [authLoading, setAuthLoading] = useState(false);
 
   const { t } = useTranslation("game_details");
   const { formatDate, formatDateTime } = useDate();
@@ -51,12 +58,47 @@ export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
     toggleArtifactFreeze,
     setShowCloudSyncFilesModal,
     getGameBackupPreview,
+    getGameArtifacts,
   } = useContext(cloudSyncContext);
 
   const { objectId, shop, gameTitle, game, lastDownloadedOption } =
     useContext(gameDetailsContext);
 
   const { showSuccessToast, showErrorToast } = useToast();
+
+  const refreshSession = async () => {
+    if (!isSelfHostedCloudSaveEnabled) return;
+    const currentSession = await window.electron.selfHostedCloudGetSession();
+    setSession(currentSession ? { username: currentSession.username } : null);
+  };
+
+  const handleCloudAuth = async () => {
+    if (!username.trim() || !password) return;
+
+    setAuthLoading(true);
+    try {
+      if (isCreatingAccount) {
+        await window.electron.selfHostedCloudSignUp(username, password);
+      } else {
+        await window.electron.selfHostedCloudSignIn(username, password);
+      }
+
+      setPassword("");
+      await refreshSession();
+      await getGameBackupPreview();
+      await getGameArtifacts();
+    } catch (err) {
+      showErrorToast("Cloud account authentication failed");
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleCloudSignOut = async () => {
+    await window.electron.selfHostedCloudSignOut();
+    setSession(null);
+    await getGameArtifacts();
+  };
 
   const handleDeleteArtifactClick = async (gameArtifactId: string) => {
     setDeletingArtifact(true);
@@ -106,12 +148,15 @@ export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
 
   useEffect(() => {
     if (visible) {
+      refreshSession();
       getGameBackupPreview();
     }
   }, [getGameBackupPreview, visible]);
 
   const userDetails = useAppSelector((state) => state.userDetails.userDetails);
-  const backupsPerGameLimit = userDetails?.quirks?.backupsPerGameLimit ?? 0;
+  const backupsPerGameLimit =
+    userDetails?.quirks?.backupsPerGameLimit ??
+    (isSelfHostedCloudSaveEnabled ? 100 : 0);
 
   const backupStateLabel = useMemo(() => {
     if (uploadingBackup) {
@@ -163,7 +208,10 @@ export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
     t,
   ]);
 
+  const isSelfHostedAuthenticated = !isSelfHostedCloudSaveEnabled || !!session;
+
   const disableActions =
+    !isSelfHostedAuthenticated ||
     uploadingBackup || restoringBackup || deletingArtifact || freezingArtifact;
   const isMissingWinePrefix =
     window.electron.platform === "linux" && !game?.winePrefixPath;
@@ -183,6 +231,47 @@ export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
         onClose={onClose}
         large
       >
+        {isSelfHostedCloudSaveEnabled && !session && (
+          <div style={{ marginBottom: 12 }}>
+            <p style={{ marginBottom: 8 }}>
+              Sign in to your self-hosted cloud account to manage saves.
+            </p>
+            <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+              <TextField
+                value={username}
+                placeholder="Username"
+                onChange={(event) => setUsername(event.target.value)}
+              />
+              <TextField
+                value={password}
+                placeholder="Password"
+                type="password"
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
+            <div style={{ display: "flex", gap: 8 }}>
+              <Button onClick={handleCloudAuth} disabled={authLoading}>
+                {isCreatingAccount ? "Create account" : "Sign in"}
+              </Button>
+              <Button
+                theme="outline"
+                onClick={() => setIsCreatingAccount((current) => !current)}
+              >
+                {isCreatingAccount
+                  ? "I already have an account"
+                  : "Create new account"}
+              </Button>
+            </div>
+          </div>
+        )}
+        {isSelfHostedCloudSaveEnabled && session && (
+          <div style={{ marginBottom: 12, display: "flex", gap: 8 }}>
+            <small>Signed in as {session.username}</small>
+            <Button theme="outline" onClick={handleCloudSignOut}>
+              Sign out
+            </Button>
+          </div>
+        )}
         <div className="cloud-sync-modal__header">
           <div className="cloud-sync-modal__title-container">
             <h2>{gameTitle}</h2>

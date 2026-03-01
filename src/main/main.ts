@@ -18,12 +18,14 @@ import {
   DeckyPlugin,
   DownloadSourcesChecker,
   WSClient,
+  SelfHostedCloud,
   logger,
 } from "@main/services";
 import { migrateDownloadSources } from "./helpers/migrate-download-sources";
 
 export const loadState = async () => {
   await Lock.acquireLock();
+  await SelfHostedCloud.initialize();
 
   const userPreferences = await db.get<string, UserPreferences | null>(
     levelKeys.userPreferences,

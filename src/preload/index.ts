@@ -336,6 +336,38 @@ contextBridge.exposeInMainWorld("electron", {
     ipcRenderer.invoke("downloadGameArtifact", objectId, shop, gameArtifactId),
   getGameArtifacts: (objectId: string, shop: GameShop) =>
     ipcRenderer.invoke("getGameArtifacts", objectId, shop),
+  deleteGameArtifact: (
+    objectId: string,
+    shop: GameShop,
+    gameArtifactId: string
+  ) =>
+    ipcRenderer.invoke("deleteGameArtifact", objectId, shop, gameArtifactId),
+  toggleArtifactFreeze: (
+    objectId: string,
+    shop: GameShop,
+    gameArtifactId: string,
+    freeze: boolean
+  ) =>
+    ipcRenderer.invoke(
+      "toggleArtifactFreeze",
+      objectId,
+      shop,
+      gameArtifactId,
+      freeze
+    ),
+  renameGameArtifact: (
+    objectId: string,
+    shop: GameShop,
+    gameArtifactId: string,
+    label: string
+  ) =>
+    ipcRenderer.invoke(
+      "renameGameArtifact",
+      objectId,
+      shop,
+      gameArtifactId,
+      label
+    ),
   getGameBackupPreview: (objectId: string, shop: GameShop) =>
     ipcRenderer.invoke("getGameBackupPreview", objectId, shop),
   selectGameBackupPath: (
@@ -381,6 +413,16 @@ contextBridge.exposeInMainWorld("electron", {
         listener
       );
   },
+  selfHostedCloudGetSession: () => ipcRenderer.invoke("selfHostedCloudGetSession"),
+  selfHostedCloudSignIn: (username: string, password: string) =>
+    ipcRenderer.invoke("selfHostedCloudSignIn", username, password),
+  selfHostedCloudSignUp: (username: string, password: string) =>
+    ipcRenderer.invoke("selfHostedCloudSignUp", username, password),
+  selfHostedCloudSignOut: () => ipcRenderer.invoke("selfHostedCloudSignOut"),
+  selfHostedCloudGetPathConfig: () =>
+    ipcRenderer.invoke("selfHostedCloudGetPathConfig"),
+  selfHostedCloudSetPath: (pathValue: string | null) =>
+    ipcRenderer.invoke("selfHostedCloudSetPath", pathValue),
 
   /* Misc */
   ping: () => ipcRenderer.invoke("ping"),

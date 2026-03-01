@@ -1,5 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Sidebar, BottomPanel, Header, Toast } from "@renderer/components";
+import {
+  Sidebar,
+  BottomPanel,
+  Header,
+  Toast,
+  Modal,
+  TextField,
+  Button,
+} from "@renderer/components";
 import { WorkWonders } from "workwonders-sdk";
 import {
   useAppDispatch,
@@ -80,6 +88,8 @@ export function App() {
   const [showArchiveDeletionModal, setShowArchiveDeletionModal] =
     useState(false);
   const [archivePaths, setArchivePaths] = useState<string[]>([]);
+  const [showSelfHostedPathModal, setShowSelfHostedPathModal] = useState(false);
+  const [selfHostedPathValue, setSelfHostedPathValue] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -174,6 +184,13 @@ export function App() {
   useEffect(() => {
     setupExternalResources();
   }, [setupExternalResources]);
+
+  useEffect(() => {
+    window.electron.selfHostedCloudGetPathConfig().then((config) => {
+      setSelfHostedPathValue(config.path ?? "");
+      setShowSelfHostedPathModal(!config.isConfigured);
+    });
+  }, []);
 
   const onSignIn = useCallback(() => {
     fetchUserDetails().then((response) => {
@@ -301,6 +318,25 @@ export function App() {
     dispatch(closeToast());
   }, [dispatch]);
 
+  const handlePickSelfHostedPath = useCallback(async () => {
+    const result = await window.electron.showOpenDialog({
+      properties: ["openDirectory", "createDirectory"],
+      defaultPath: selfHostedPathValue || undefined,
+    });
+
+    if (!result.canceled && result.filePaths.length > 0) {
+      setSelfHostedPathValue(result.filePaths[0]);
+    }
+  }, [selfHostedPathValue]);
+
+  const handleSaveSelfHostedPath = useCallback(async () => {
+    const value = selfHostedPathValue.trim();
+    if (!value) return;
+
+    await window.electron.selfHostedCloudSetPath(value);
+    setShowSelfHostedPathModal(false);
+  }, [selfHostedPathValue]);
+
   return (
     <>
       {window.electron.platform === "win32" && (
@@ -334,6 +370,32 @@ export function App() {
         archivePaths={archivePaths}
         onClose={() => setShowArchiveDeletionModal(false)}
       />
+
+      <Modal
+        visible={showSelfHostedPathModal}
+        title="Self-hosted Cloud Setup"
+        description="Choose a shared folder path for cloud saves (same path on all devices)."
+        onClose={() => {}}
+      >
+        <TextField
+          label="Cloud save folder"
+          value={selfHostedPathValue}
+          placeholder="Z:\\HydraCloud"
+          onChange={(event) => setSelfHostedPathValue(event.target.value)}
+        />
+        <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+          <Button type="button" theme="outline" onClick={handlePickSelfHostedPath}>
+            Browse
+          </Button>
+          <Button
+            type="button"
+            onClick={handleSaveSelfHostedPath}
+            disabled={!selfHostedPathValue.trim()}
+          >
+            Save
+          </Button>
+        </div>
+      </Modal>
 
       <main>
         <Sidebar />
