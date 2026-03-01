@@ -20,11 +20,7 @@ import { useSubscription } from "@renderer/hooks/use-subscription";
 import "./game-details.scss";
 import "./hero.scss";
 
-const isSelfHostedCloudSaveEnabled = ["1", "true"].includes(
-  String(
-    import.meta.env.RENDERER_VITE_SELF_HOSTED_CLOUD_SAVE ?? ""
-  ).toLowerCase()
-);
+const isSelfHostedCloudSaveEnabled = true;
 
 const processMediaElements = (document: Document) => {
   const $images = Array.from(document.querySelectorAll("img"));

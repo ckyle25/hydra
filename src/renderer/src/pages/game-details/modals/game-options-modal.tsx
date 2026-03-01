@@ -16,6 +16,8 @@ import { getGameKey } from "@renderer/helpers";
 import "./game-options-modal.scss";
 import { logger } from "@renderer/logger";
 
+const isSelfHostedCloudSaveEnabled = true;
+
 export interface GameOptionsModalProps {
   visible: boolean;
   game: LibraryGame;
@@ -427,7 +429,10 @@ export function GameOptionsModal({
                 </div>
               }
               checked={automaticCloudSync}
-              disabled={!hasActiveSubscription || !game.executablePath}
+              disabled={
+                (!hasActiveSubscription && !isSelfHostedCloudSaveEnabled) ||
+                !game.executablePath
+              }
               onChange={handleToggleAutomaticCloudSync}
             />
           )}

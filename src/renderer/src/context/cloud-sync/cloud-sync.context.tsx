@@ -10,11 +10,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 
-const isSelfHostedCloudSaveEnabled = ["1", "true"].includes(
-  String(
-    import.meta.env.RENDERER_VITE_SELF_HOSTED_CLOUD_SAVE ?? ""
-  ).toLowerCase()
-);
+const isSelfHostedCloudSaveEnabled = true;
 
 export enum CloudSyncState {
   New,
