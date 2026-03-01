@@ -24,7 +24,6 @@ import type {
   UserPreferences,
 } from "@types";
 import { AuthPage, generateAchievementCustomNotificationTest } from "@shared";
-import { isStaging } from "@main/constants";
 import { logger } from "./logger";
 
 export class WindowManager {
@@ -209,7 +208,7 @@ export class WindowManager {
     this.mainWindow.removeMenu();
 
     this.mainWindow.on("ready-to-show", () => {
-      if (!app.isPackaged || isStaging)
+      if (!app.isPackaged)
         WindowManager.mainWindow?.webContents.openDevTools();
       WindowManager.mainWindow?.show();
     });
@@ -407,7 +406,7 @@ export class WindowManager {
     this.notificationWindow.setAlwaysOnTop(true, "screen-saver", 1);
     this.loadWindowURL(this.notificationWindow, "achievement-notification");
 
-    if (!app.isPackaged || isStaging) {
+    if (!app.isPackaged) {
       this.notificationWindow.webContents.openDevTools();
     }
   }
@@ -485,8 +484,8 @@ export class WindowManager {
 
       editorWindow.once("ready-to-show", () => {
         editorWindow.show();
-        this.mainWindow?.webContents.openDevTools();
-        if (!app.isPackaged || isStaging) {
+        if (!app.isPackaged) {
+          this.mainWindow?.webContents.openDevTools();
           editorWindow.webContents.openDevTools();
         }
       });
@@ -565,7 +564,7 @@ export class WindowManager {
       this.gameLauncherWindow = null;
     });
 
-    if (!app.isPackaged || isStaging) {
+    if (!app.isPackaged) {
       this.gameLauncherWindow.webContents.openDevTools();
     }
   }
