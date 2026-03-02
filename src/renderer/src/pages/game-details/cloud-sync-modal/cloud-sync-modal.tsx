@@ -154,9 +154,10 @@ export function CloudSyncModal({ visible, onClose }: CloudSyncModalProps) {
   }, [getGameBackupPreview, visible]);
 
   const userDetails = useAppSelector((state) => state.userDetails.userDetails);
-  const backupsPerGameLimit =
-    userDetails?.quirks?.backupsPerGameLimit ??
-    (isSelfHostedCloudSaveEnabled ? 100 : 0);
+  const rawBackupsPerGameLimit = userDetails?.quirks?.backupsPerGameLimit;
+  const backupsPerGameLimit = isSelfHostedCloudSaveEnabled
+    ? Math.max(rawBackupsPerGameLimit ?? 0, 100)
+    : (rawBackupsPerGameLimit ?? 0);
 
   const backupStateLabel = useMemo(() => {
     if (uploadingBackup) {
