@@ -1,5 +1,5 @@
 import { UserGame } from "@types";
-import HydraIcon from "@renderer/assets/icons/hydra.svg?react";
+import VaporIcon from "@renderer/assets/icons/vapor.svg?react";
 import { useFormat, useToast } from "@renderer/hooks";
 import { useNavigate } from "react-router-dom";
 import { useCallback, useContext, useEffect, useState } from "react";
@@ -212,7 +212,7 @@ export function UserLibraryGameCard({
                             transform: `translateY(${-100 * (statIndex % getStatsItemCount())}%)`,
                           }}
                         >
-                          <HydraIcon width={16} height={16} />
+                          <VaporIcon width={16} height={16} />
                           {formatAchievementPoints(
                             game.achievementsPointsEarnedSum
                           )}
@@ -265,3 +265,4 @@ export function UserLibraryGameCard({
     </>
   );
 }
+

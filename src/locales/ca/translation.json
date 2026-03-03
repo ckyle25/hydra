@@ -105,7 +105,7 @@
     "downloads_section_title": "Descàrregues",
     "downloads_section_description": "Comprova actualitzacions o altres versions del videojoc",
     "danger_zone_section_title": "Zona de perill",
-    "danger_zone_section_description": "Elimina aquest videojoc del teu catàleg o els fitxers descarregats per Hydra",
+    "danger_zone_section_description": "Elimina aquest videojoc del teu catàleg o els fitxers descarregats per Vapor",
     "download_in_progress": "Descàrrega en progrés",
     "download_paused": "Descàrrega en pausa",
     "last_downloaded_option": "Opció de l'última descàrrega",
@@ -113,7 +113,7 @@
     "create_shortcut_error": "Error al crear l'accés directe"
   },
   "activation": {
-    "title": "Activa l'Hydra",
+    "title": "Activa l'Vapor",
     "installation_id": "ID d'instal·lació:",
     "enter_activation_code": "Introdueix el codi d'activació",
     "message": "Si no saps on demanar-ho, no ho hauries de tenir.",
@@ -142,7 +142,7 @@
     "downloads_completed": "Completat",
     "queued": "En espera",
     "no_downloads_title": "Buit",
-    "no_downloads_description": "No has descarregat res amb Hydra encara, però mai és tard per començar a fer-ho.",
+    "no_downloads_description": "No has descarregat res amb Vapor encara, però mai és tard per començar a fer-ho.",
     "checking_files": "Comprovant fitxers…"
   },
   "settings": {
@@ -152,8 +152,8 @@
     "enable_download_notifications": "Quan finalitzi una baixada",
     "enable_repack_list_notifications": "Quan s'afegeixi un nou reempaquetat",
     "real_debrid_api_token_label": "Testimoni de l'API de Real Debrid",
-    "quit_app_instead_hiding": "Tanca l'Hydra en compte de minimitzar-la a la safata",
-    "launch_with_system": "Inicia l'Hydra quan s'iniciï el sistema",
+    "quit_app_instead_hiding": "Tanca l'Vapor en compte de minimitzar-la a la safata",
+    "launch_with_system": "Inicia l'Vapor quan s'iniciï el sistema",
     "general": "General",
     "behavior": "Comportament",
     "download_sources": "Fonts de descàrrega",
@@ -167,7 +167,7 @@
     "debrid_linked_message": "Compte \"{{username}}\" vinculat",
     "save_changes": "Desa els canvis",
     "changes_saved": "Els canvis s'han desat correctament",
-    "download_sources_description": "Hydra buscarà els enllaços de descàrrega d'aquestes fonts. L'URL d'origen ha de ser un enllaç directe a un fitxer .json que contingui els enllaços de descàrrega.",
+    "download_sources_description": "Vapor buscarà els enllaços de descàrrega d'aquestes fonts. L'URL d'origen ha de ser un enllaç directe a un fitxer .json que contingui els enllaços de descàrrega.",
     "validate_download_source": "Valida",
     "remove_download_source": "Elimina",
     "cancel_button_confirmation_delete_all_sources": "No",
@@ -201,10 +201,10 @@
     "repack_count_one": "S'ha afegit {{count}} reempaquetat",
     "repack_count_other": "S'han afegit {{count}} reempaquetats",
     "new_update_available": "Versió {{version}} disponible",
-    "restart_to_install_update": "Reinicieu Hydra per instal·lar l'actualització"
+    "restart_to_install_update": "Reinicieu Vapor per instal·lar l'actualització"
   },
   "system_tray": {
-    "open": "Obre l'Hydra",
+    "open": "Obre l'Vapor",
     "quit": "Tanca"
   },
   "game_card": {
@@ -253,3 +253,6 @@
     "user_not_found": "Usuari no trobat"
   }
 }
+
+
+

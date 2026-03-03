@@ -80,7 +80,7 @@
     "open_screenshot": "Apri screenshot {{number}}"
   },
   "activation": {
-    "title": "Attiva Hydra",
+    "title": "Attiva Vapor",
     "installation_id": "ID installazione:",
     "enter_activation_code": "Inserisci il tuo codice di attivazione",
     "message": "Se non sai dove chiederlo, allora non dovresti averlo.",
@@ -111,8 +111,8 @@
     "enable_download_notifications": "Quando un download è completo",
     "enable_repack_list_notifications": "Quando viene aggiunto un nuovo repack",
     "real_debrid_api_token_label": "Token API Real Debrid",
-    "quit_app_instead_hiding": "Esci da Hydra invece di nascondere nell'area di notifica",
-    "launch_with_system": "Apri Hydra all'avvio",
+    "quit_app_instead_hiding": "Esci da Vapor invece di nascondere nell'area di notifica",
+    "launch_with_system": "Apri Vapor all'avvio",
     "general": "Generale",
     "behavior": "Comportamento",
     "enable_real_debrid": "Abilita Real Debrid",
@@ -133,7 +133,7 @@
     "repack_count_other": "{{count}} repack aggiunti"
   },
   "system_tray": {
-    "open": "Apri Hydra",
+    "open": "Apri Vapor",
     "quit": "Esci"
   },
   "game_card": {
@@ -148,3 +148,6 @@
     "close": "Pulsante Chiudi"
   }
 }
+
+
+

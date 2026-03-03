@@ -84,7 +84,7 @@
     "downloader": "Program de descărcare"
   },
   "activation": {
-    "title": "Activează Hydra",
+    "title": "Activează Vapor",
     "installation_id": "ID-ul de instalare:",
     "enter_activation_code": "Introdu codul de activare",
     "message": "Dacă nu știi de unde să ceri acest lucru, atunci nu ar trebui să-l ai.",
@@ -116,8 +116,8 @@
     "enable_download_notifications": "Când o descărcare este completă",
     "enable_repack_list_notifications": "Când un nou repack este adăugat",
     "real_debrid_api_token_label": "Token API Real-Debrid",
-    "quit_app_instead_hiding": "Nu ascunde Hydra la închidere",
-    "launch_with_system": "Lansează Hydra la pornirea sistemului",
+    "quit_app_instead_hiding": "Nu ascunde Vapor la închidere",
+    "launch_with_system": "Lansează Vapor la pornirea sistemului",
     "general": "General",
     "behavior": "Comportament",
     "language": "Limbă",
@@ -145,7 +145,7 @@
     "repack_count_other": "{{count}} repack-uri adăugate"
   },
   "system_tray": {
-    "open": "Deschide Hydra",
+    "open": "Deschide Vapor",
     "quit": "Ieși"
   },
   "game_card": {
@@ -160,3 +160,6 @@
     "close": "Buton de închidere"
   }
 }
+
+
+

@@ -57,11 +57,16 @@
     border-radius: 4px;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(77, 216, 245, 0.14);
     }
 
     &--active {
-      background-color: rgba(255, 255, 255, 0.1);
+      background: linear-gradient(
+        90deg,
+        rgba(77, 216, 245, 0.18) 0%,
+        rgba(108, 123, 255, 0.14) 100%
+      );
+      border: 1px solid rgba(136, 229, 255, 0.28);
     }
 
     &--muted {
@@ -75,16 +80,16 @@
     &--decky {
       background: linear-gradient(
         135deg,
-        rgba(22, 177, 149, 0.2) 0%,
-        rgba(62, 98, 192, 0.1) 100%
+        rgba(77, 216, 245, 0.2) 0%,
+        rgba(108, 123, 255, 0.1) 100%
       );
       color: globals.$muted-color;
 
       &:hover {
         background: linear-gradient(
           135deg,
-          rgba(22, 177, 149, 0.3) 0%,
-          rgba(62, 98, 192, 0.15) 100%
+          rgba(77, 216, 245, 0.3) 0%,
+          rgba(108, 123, 255, 0.15) 100%
         );
       }
     }
@@ -169,7 +174,7 @@
     transition: background-color ease 0.1s;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(77, 216, 245, 0.14);
     }
   }
 
@@ -228,3 +233,4 @@
     }
   }
 }
+

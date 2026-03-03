@@ -80,7 +80,7 @@
     "open_screenshot": "Otwórz zrzut ekranu {{number}}"
   },
   "activation": {
-    "title": "Aktywuj Hydra",
+    "title": "Aktywuj Vapor",
     "installation_id": "Identyfikator instalacji:",
     "enter_activation_code": "Enter your activation code",
     "message": "Jeśli nie wiesz, gdzie o to poprosić, to nie powinieneś/aś tego mieć.",
@@ -112,7 +112,7 @@
     "enable_repack_list_notifications": "Gdy dodawany jest nowy repack",
     "real_debrid_api_token_label": "Real-Debrid API token",
     "quit_app_instead_hiding": "Zamknij Hydr zamiast minimalizować do zasobnika",
-    "launch_with_system": "Uruchom Hydra przy starcie systemu",
+    "launch_with_system": "Uruchom Vapor przy starcie systemu",
     "general": "Ogólne",
     "behavior": "Zachowania",
     "language": "Język",
@@ -133,7 +133,7 @@
     "repack_count_other": "{{count}} repacki dodane"
   },
   "system_tray": {
-    "open": "Otwórz Hydra",
+    "open": "Otwórz Vapor",
     "quit": "Wyjdź"
   },
   "game_card": {
@@ -148,3 +148,6 @@
     "close": "Zamknij"
   }
 }
+
+
+

@@ -424,7 +424,7 @@ export function GameOptionsModal({
                 <div className="game-options-modal__cloud-sync-label">
                   {t("enable_automatic_cloud_sync")}
                   <span className="game-options-modal__cloud-sync-hydra-cloud">
-                    Hydra Cloud
+                    Vapor Cloud
                   </span>
                 </div>
               }
@@ -626,3 +626,4 @@ export function GameOptionsModal({
     </>
   );
 }
+

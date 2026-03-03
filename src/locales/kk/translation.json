@@ -104,7 +104,7 @@
     "downloads_section_title": "Жүктеулер",
     "downloads_section_description": "Ойынның жаңартулары немесе басқа нұсқалары бар-жоғын тексеру",
     "danger_zone_section_title": "Қауіпті аймақ",
-    "danger_zone_section_description": "Осы ойынды кітапханаңыздан жою немесе Hydra жүктеген файлдарды жою",
+    "danger_zone_section_description": "Осы ойынды кітапханаңыздан жою немесе Vapor жүктеген файлдарды жою",
     "download_in_progress": "Жүктеу жүріп жатыр",
     "download_paused": "Жүктеу тоқтатылды",
     "last_downloaded_option": "Соңғы жүктеу нұсқасы",
@@ -112,7 +112,7 @@
     "create_shortcut_error": "Жарлық жасау мүмкін болмады"
   },
   "activation": {
-    "title": "Hydra-ны белсендіру",
+    "title": "Vapor-ны белсендіру",
     "installation_id": "Орнату ID:",
     "enter_activation_code": "Активтендіру кодын енгізіңіз",
     "message": "Егер оның қайдан алуға болатынын білмесеңіз, сізде оның болмауы керек.",
@@ -141,7 +141,7 @@
     "downloads_completed": "Аяқталды",
     "queued": "Кезекте",
     "no_downloads_title": "Мұнда бос...",
-    "no_downloads_description": "Сіз Hydra арқылы әлі ештеңе жүктемегенсіз, бірақ бастау ешқашан кеш емес."
+    "no_downloads_description": "Сіз Vapor арқылы әлі ештеңе жүктемегенсіз, бірақ бастау ешқашан кеш емес."
   },
   "settings": {
     "downloads_path": "Жүктеу жолы",
@@ -150,8 +150,8 @@
     "enable_download_notifications": "Жүктеу аяқталғанда",
     "enable_repack_list_notifications": "Жаңа репак қосылғанда",
     "real_debrid_api_token_label": "Real-Debrid API-токен",
-    "quit_app_instead_hiding": "Hydra-ны трейге жасырудың орнына жабу",
-    "launch_with_system": "Жүйемен бірге Hydra-ны іске қосу",
+    "quit_app_instead_hiding": "Vapor-ны трейге жасырудың орнына жабу",
+    "launch_with_system": "Жүйемен бірге Vapor-ны іске қосу",
     "general": "Жалпы",
     "behavior": "Мінез-құлық",
     "download_sources": "Жүктеу көздері",
@@ -165,7 +165,7 @@
     "debrid_linked_message": "\"{{username}}\" аккаунты байланған",
     "save_changes": "Өзгерістерді сақтау",
     "changes_saved": "Өзгерістер сәтті сақталды",
-    "download_sources_description": "Hydra осы көздерден жүктеу сілтемелерін алады. URL-да жүктеу сілтемелері бар .json файлына тікелей сілтеме болуы керек.",
+    "download_sources_description": "Vapor осы көздерден жүктеу сілтемелерін алады. URL-да жүктеу сілтемелері бар .json файлына тікелей сілтеме болуы керек.",
     "validate_download_source": "Тексеру",
     "remove_download_source": "Жою",
     "cancel_button_confirmation_delete_all_sources": "Жоқ",
@@ -200,7 +200,7 @@
     "repack_count_other": "{{count}} репактар қосылды"
   },
   "system_tray": {
-    "open": "Hydra-ны ашу",
+    "open": "Vapor-ны ашу",
     "quit": "Шығу"
   },
   "game_card": {
@@ -240,3 +240,6 @@
     "sign_out_modal_text": "Сіздің кітапханаңыз ағымдағы аккаунтпен байланысты. Жүйеден шыққанда сіздің кітапханаңыз қол жетімсіз болады және прогресс сақталмайды. Шығу?"
   }
 }
+
+
+

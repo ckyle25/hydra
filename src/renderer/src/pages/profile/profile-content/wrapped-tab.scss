@@ -17,7 +17,7 @@
   &__backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(7, 16, 34, 0.9);
     border: none;
     z-index: 1;
   }
@@ -38,7 +38,7 @@
     position: absolute;
     top: calc(globals.$spacing-unit * 5);
     right: calc(globals.$spacing-unit * 5);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(77, 216, 245, 0.16);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -53,7 +53,7 @@
     pointer-events: auto;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(77, 216, 245, 0.28);
     }
   }
 
@@ -61,10 +61,10 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(157, 196, 255, 0.26);
+    box-shadow: 0 8px 48px rgba(4, 11, 24, 0.56);
     pointer-events: auto;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(10, 24, 48, 0.5);
   }
 
   &__loader {
@@ -73,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(10, 24, 48, 0.5);
     z-index: 1;
   }
 

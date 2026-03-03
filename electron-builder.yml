@@ -1,5 +1,5 @@
 appId: gg.hydralauncher.hydra
-productName: Hydra
+productName: Vapor
 directories:
   buildResources: build
 extraResources:
@@ -20,7 +20,7 @@ asarUnpack:
   - node_modules/sharp/**
   - node_modules/@img/sharp-libvips-*/**
 win:
-  executableName: Hydra
+  executableName: Vapor
   extraResources:
     - from: binaries/aria2c.exe
     - from: binaries/7z.exe
@@ -72,3 +72,4 @@ publish:
   repo: hydra
 electronDownload:
   mirror: https://npmmirror.com/mirrors/electron/
+

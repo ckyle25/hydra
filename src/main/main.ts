@@ -24,6 +24,11 @@ import {
 import { migrateDownloadSources } from "./helpers/migrate-download-sources";
 
 export const loadState = async () => {
+  // Ensure LevelDB is fully opened before first read to avoid startup races.
+  if (db.status !== "open") {
+    await db.open();
+  }
+
   await Lock.acquireLock();
   await SelfHostedCloud.initialize();
 

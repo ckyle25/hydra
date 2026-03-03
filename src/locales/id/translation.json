@@ -104,7 +104,7 @@
     "downloads_section_title": "Unduhan",
     "downloads_section_description": "Cek update atau versi lain dari game ini",
     "danger_zone_section_title": "Zona Berbahaya",
-    "danger_zone_section_description": "Hapus game ini dari perpustakaan kamu atau file yang diunduh oleh Hydra",
+    "danger_zone_section_description": "Hapus game ini dari perpustakaan kamu atau file yang diunduh oleh Vapor",
     "download_in_progress": "Sedang mengunduh",
     "download_paused": "Unduhan dijeda",
     "last_downloaded_option": "Opsi terakhir diunduh",
@@ -112,7 +112,7 @@
     "create_shortcut_error": "Gagal membuat pintasan"
   },
   "activation": {
-    "title": "Aktifkan Hydra",
+    "title": "Aktifkan Vapor",
     "installation_id": "ID Instalasi:",
     "enter_activation_code": "Masukkan kode aktivasi kamu",
     "message": "Kalau tidak tahu harus tanya ke siapa, berarti kamu tidak perlu ini.",
@@ -141,7 +141,7 @@
     "downloads_completed": "Selesai",
     "queued": "Dalam antrian",
     "no_downloads_title": "Kosong",
-    "no_downloads_description": "Kamu belum mengunduh apa pun dengan Hydra, tapi belum terlambat untuk mulai.",
+    "no_downloads_description": "Kamu belum mengunduh apa pun dengan Vapor, tapi belum terlambat untuk mulai.",
     "checking_files": "Memeriksa file…"
   },
   "settings": {
@@ -151,8 +151,8 @@
     "enable_download_notifications": "Saat unduhan selesai",
     "enable_repack_list_notifications": "Saat ada repack baru",
     "real_debrid_api_token_label": "Token API Real-Debrid",
-    "quit_app_instead_hiding": "Jangan sembunyikan Hydra saat ditutup",
-    "launch_with_system": "Jalankan Hydra saat sistem dinyalakan",
+    "quit_app_instead_hiding": "Jangan sembunyikan Vapor saat ditutup",
+    "launch_with_system": "Jalankan Vapor saat sistem dinyalakan",
     "general": "Umum",
     "behavior": "Perilaku",
     "download_sources": "Sumber unduhan",
@@ -166,7 +166,7 @@
     "debrid_linked_message": "Akun \"{{username}}\" terhubung",
     "save_changes": "Simpan perubahan",
     "changes_saved": "Perubahan disimpan berhasil",
-    "download_sources_description": "Hydra akan mencari link unduhan dari sini. URL harus menuju file .json dengan link unduhan.",
+    "download_sources_description": "Vapor akan mencari link unduhan dari sini. URL harus menuju file .json dengan link unduhan.",
     "validate_download_source": "Validasi",
     "remove_download_source": "Hapus",
     "cancel_button_confirmation_delete_all_sources": "TIDAK",
@@ -200,10 +200,10 @@
     "repack_count_one": "{{count}} repack ditambahkan",
     "repack_count_other": "{{count}} repack ditambahkan",
     "new_update_available": "Versi {{version}} tersedia",
-    "restart_to_install_update": "Restart Hydra untuk instal pembaruan"
+    "restart_to_install_update": "Restart Vapor untuk instal pembaruan"
   },
   "system_tray": {
-    "open": "Buka Hydra",
+    "open": "Buka Vapor",
     "quit": "Keluar"
   },
   "game_card": {
@@ -252,3 +252,6 @@
     "user_not_found": "Pengguna tidak ditemukan"
   }
 }
+
+
+

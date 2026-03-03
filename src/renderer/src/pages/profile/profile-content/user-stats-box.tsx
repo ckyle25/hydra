@@ -3,7 +3,7 @@ import { userProfileContext } from "@renderer/context";
 import { useTranslation } from "react-i18next";
 import { useFormat, useUserDetails } from "@renderer/hooks";
 import { MAX_MINUTES_TO_SHOW_IN_PLAYTIME } from "@renderer/constants";
-import HydraIcon from "@renderer/assets/icons/hydra.svg?react";
+import VaporIcon from "@renderer/assets/icons/vapor.svg?react";
 import { useSubscription } from "@renderer/hooks/use-subscription";
 import { ClockIcon, TrophyIcon } from "@primer/octicons-react";
 import { Award } from "lucide-react";
@@ -87,7 +87,7 @@ export function UserStatsBox() {
             {userStats.achievementsPointsEarnedSum !== undefined ? (
               <div className="user-stats__stats-row">
                 <p className="user-stats__list-description">
-                  <HydraIcon width={20} height={20} />
+                  <VaporIcon width={20} height={20} />
                   {numberFormatter.format(
                     userStats.achievementsPointsEarnedSum.value
                   )}
@@ -151,3 +151,4 @@ export function UserStatsBox() {
     </div>
   );
 }
+

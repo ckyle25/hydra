@@ -3,7 +3,7 @@ import type { UserAchievement } from "@types";
 import { useTranslation } from "react-i18next";
 import "./achievements.scss";
 import { EyeClosedIcon } from "@primer/octicons-react";
-import HydraIcon from "@renderer/assets/icons/hydra.svg?react";
+import VaporIcon from "@renderer/assets/icons/vapor.svg?react";
 import { useSubscription } from "@renderer/hooks/use-subscription";
 
 interface AchievementListProps {
@@ -51,7 +51,7 @@ export function AchievementList({
                   points: achievement.points,
                 })}
               >
-                <HydraIcon className="achievements__item-points-icon" />
+                <VaporIcon className="achievements__item-points-icon" />
                 <p className="achievements__item-points-value">
                   {achievement.points}
                 </p>
@@ -62,7 +62,7 @@ export function AchievementList({
                 className="achievements__item-points achievements__item-points--locked"
                 title={t("achievement_earn_points", { points: "???" })}
               >
-                <HydraIcon className="achievements__item-points-icon" />
+                <VaporIcon className="achievements__item-points-icon" />
                 <p className="achievements__item-points-value">???</p>
               </button>
             )}
@@ -82,3 +82,4 @@ export function AchievementList({
     </ul>
   );
 }
+

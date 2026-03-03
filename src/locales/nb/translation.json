@@ -109,7 +109,7 @@
     "downloads_section_title": "Nedlastinger",
     "downloads_section_description": "Sjekk for oppdateringer eller andre versjoner af dette spillet",
     "danger_zone_section_title": "Faresonen",
-    "danger_zone_section_description": "Fjern dette spillet fra biblioteket ditt eller filene som har blitt lastet ned av Hydra",
+    "danger_zone_section_description": "Fjern dette spillet fra biblioteket ditt eller filene som har blitt lastet ned av Vapor",
     "download_in_progress": "Nedlasting pågår",
     "download_paused": "Nedlasting satt på pause",
     "last_downloaded_option": "Siste nedlastingsmulighet",
@@ -126,10 +126,10 @@
     "download": "Last ned",
     "executable_path_in_use": "Kjørbar fil blir allerede brukt av \"{{game}}\"",
     "warning": "Advarsel:",
-    "hydra_needs_to_remain_open": "Hydra skal forbli åpent for at denne nedlastingen kan gjennomføres. I tilfelle av at Hydra lukker før nedlastingen er ferdig, mister du fremskrittet ditt."
+    "hydra_needs_to_remain_open": "Vapor skal forbli åpent for at denne nedlastingen kan gjennomføres. I tilfelle av at Vapor lukker før nedlastingen er ferdig, mister du fremskrittet ditt."
   },
   "activation": {
-    "title": "Aktivér Hydra",
+    "title": "Aktivér Vapor",
     "installation_id": "Installasjons ID:",
     "enter_activation_code": "Inntast aktiveringskoden din",
     "message": "Hvis du ikke vet hvor du skal spørre om dette, burde du ikke ha dette.",
@@ -158,7 +158,7 @@
     "downloads_completed": "Gjennomførte",
     "queued": "I kø",
     "no_downloads_title": "Ganske tomt",
-    "no_downloads_description": "Du har ikke lastet ned noe med Hydra enda, men det er aldri for sent å begynne.",
+    "no_downloads_description": "Du har ikke lastet ned noe med Vapor enda, men det er aldri for sent å begynne.",
     "checking_files": "Undersøker filer…"
   },
   "settings": {
@@ -168,8 +168,8 @@
     "enable_download_notifications": "Når en nedlasting blir ferdig",
     "enable_repack_list_notifications": "Når en ny gjennpakking bliver lagt til",
     "real_debrid_api_token_label": "Real-Debrid API nøkkel",
-    "quit_app_instead_hiding": "Avslut Hydra i stedet for å minimere til prosesslinjen",
-    "launch_with_system": "Åpne Hydra ved oppstart av datamaskinen",
+    "quit_app_instead_hiding": "Avslut Vapor i stedet for å minimere til prosesslinjen",
+    "launch_with_system": "Åpne Vapor ved oppstart av datamaskinen",
     "general": "Generelt",
     "behavior": "Oppførsel",
     "download_sources": "Nedlastingskilder",
@@ -183,7 +183,7 @@
     "debrid_linked_message": "Brukeren \"{{username}}\" er forbunnet",
     "save_changes": "Lagre endringer",
     "changes_saved": "Lagring av endringer vellykket",
-    "download_sources_description": "Hydra vil hente nedlastingslenker fra disse kildene. Kilde URLen skal være en direkte lenke til en .json fil som inneholder nedlastingslenkene.",
+    "download_sources_description": "Vapor vil hente nedlastingslenker fra disse kildene. Kilde URLen skal være en direkte lenke til en .json fil som inneholder nedlastingslenkene.",
     "validate_download_source": "Validér",
     "remove_download_source": "Fjern",
     "add_download_source": "Legg til kilde",
@@ -228,10 +228,10 @@
     "repack_count_one": "{{count}} gjennpakking lagt til",
     "repack_count_other": "{{count}} gjennpakkinger lagt til",
     "new_update_available": "Versjon {{version}} tilgjengelig",
-    "restart_to_install_update": "Gjenstart Hydra for å installere oppdateringen"
+    "restart_to_install_update": "Gjenstart Vapor for å installere oppdateringen"
   },
   "system_tray": {
-    "open": "Åpne Hydra",
+    "open": "Åpne Vapor",
     "quit": "Avslutt"
   },
   "game_card": {
@@ -316,3 +316,6 @@
     "profile_reported": "Profil rapportert"
   }
 }
+
+
+

@@ -96,7 +96,7 @@
     "downloads_section_title": "Yuklab olishlar",
     "downloads_section_description": "Yangilanishlar yoki o'yinning boshqa versiyalarini tekshirish",
     "danger_zone_section_title": "Xavfli zona",
-    "danger_zone_section_description": "Bu o'yinni kutubxonangizdan yoki Hydradan yuklab olingan fayllarni o'chirishingiz mumkin",
+    "danger_zone_section_description": "Bu o'yinni kutubxonangizdan yoki Vapordan yuklab olingan fayllarni o'chirishingiz mumkin",
     "download_in_progress": "Yuklab olish davom etmoqda",
     "download_paused": "Yuklab olish to'xtatilgan",
     "last_downloaded_option": "Oxirgi yuklab olish varianti",
@@ -113,7 +113,7 @@
     "stats": "Statistika",
     "player_count": "Faol o'yinchilar",
     "warning": "Ogohlantirish:",
-    "hydra_needs_to_remain_open": "Bu yuklab olish uchun Hydra tugaguncha ochiq qolishi kerak. Agar Hydra tugashidan oldin yopilsa, jarayonni yo'qotasiz.",
+    "hydra_needs_to_remain_open": "Bu yuklab olish uchun Vapor tugaguncha ochiq qolishi kerak. Agar Vapor tugashidan oldin yopilsa, jarayonni yo'qotasiz.",
     "achievements": "Yutuqlar",
     "achievements_count": "Yutuqlar {{unlockedCount}}/{{achievementsCount}}",
     "cloud_save": "Bulutli saqlash",
@@ -170,7 +170,7 @@
     "automatically_extract_downloaded_files": "Yuklab olingan fayllarni avtomatik chiqarish"
   },
   "activation": {
-    "title": "Hydra'ni faollashtirish",
+    "title": "Vapor'ni faollashtirish",
     "installation_id": "O'rnatish ID'si:",
     "enter_activation_code": "Faollashtirish kodini kiriting",
     "message": "Agar qayerdan so'rash kerakligini bilmasangiz, u sizda bo'lmasligi kerak.",
@@ -199,7 +199,7 @@
     "downloads_completed": "Yakunlangan",
     "queued": "Navbatda",
     "no_downloads_title": "Bu yer juda bo'sh...",
-    "no_downloads_description": "Siz hali Hydra orqali hech narsa yuklab olmadingiz, lekin boshlash uchun hech qachon kech emas.",
+    "no_downloads_description": "Siz hali Vapor orqali hech narsa yuklab olmadingiz, lekin boshlash uchun hech qachon kech emas.",
     "checking_files": "Fayllar tekshirilmoqda…",
     "seeding": "Ulashish",
     "stop_seeding": "Ulashishni to'xtatish",
@@ -217,8 +217,8 @@
     "enable_repack_list_notifications": "Yangi repak qo'shilganda",
     "real_debrid_api_token_label": "Real-Debrid API-tokeni",
     "quit_app_instead_hiding": "Ilovani trayga yig'ish o'rniga yopish",
-    "launch_with_system": "Hydra'ni tizim bilan birga ishga tushirish",
-    "launch_minimized": "Hydra'ni yig'ilgan holda ishga tushirish",
+    "launch_with_system": "Vapor'ni tizim bilan birga ishga tushirish",
+    "launch_minimized": "Vapor'ni yig'ilgan holda ishga tushirish",
     "disable_nsfw_alert": "Noqulay kontent haqida ogohlantirishni o'chirish",
     "general": "Asosiy",
     "behavior": "Xatti-harakat",
@@ -233,7 +233,7 @@
     "debrid_linked_message": "\"{{username}}\" hisobi bog'langan",
     "save_changes": "O'zgarishlarni saqlash",
     "changes_saved": "O'zgarishlar muvaffaqiyatli saqlandi",
-    "download_sources_description": "Hydra yuklab olish havolalarini ushbu manbalardan oladi. URL yuklab olish uchun havolalar bilan .json-fayliga to'g'ridan-to'g'ri havolani o'z ichiga olishi kerak.",
+    "download_sources_description": "Vapor yuklab olish havolalarini ushbu manbalardan oladi. URL yuklab olish uchun havolalar bilan .json-fayliga to'g'ridan-to'g'ri havolani o'z ichiga olishi kerak.",
     "validate_download_source": "Tekshirish",
     "remove_download_source": "O'chirish",
     "add_download_source": "Manba qo'shish",
@@ -274,17 +274,17 @@
     "show_hidden_achievement_description": "Yashirin yutuqlarning tavsifini ularni olishdan oldin ko'rsatish",
     "account": "Hisob",
     "no_users_blocked": "Sizda bloklangan foydalanuvchilar yo'q",
-    "subscription_active_until": "Hydra Cloud obunangiz {{date}} ga qadar faol",
+    "subscription_active_until": "Vapor Cloud obunangiz {{date}} ga qadar faol",
     "manage_subscription": "Obunani boshqarish",
     "update_email": "Elektron pochtani yangilash",
     "update_password": "Parolni yangilash",
     "current_email": "Joriy elektron pochta:",
     "no_email_account": "Siz hali elektron pochta o'rnatmagansiz",
     "account_data_updated_successfully": "Hisob ma'lumotlari muvaffaqiyatli yangilandi",
-    "renew_subscription": "Hydra Cloud obunasini yangilash",
+    "renew_subscription": "Vapor Cloud obunasini yangilash",
     "subscription_expired_at": "Obunangiz muddati {{date}} da tugagan",
-    "no_subscription": "Hydra'dan maksimal darajada bahramand bo'ling",
-    "become_subscriber": "Hydra Cloud egasiga aylaning",
+    "no_subscription": "Vapor'dan maksimal darajada bahramand bo'ling",
+    "become_subscriber": "Vapor Cloud egasiga aylaning",
     "subscription_renew_cancelled": "Avtomatik yangilash o'chirilgan",
     "subscription_renews_on": "Obunangiz {{date}} da yangilanadi",
     "bill_sent_until": "Keyingi hisobingiz shu kungacha yuboriladi",
@@ -296,7 +296,7 @@
     "clear_themes": "Tozalash",
     "create_theme": "Yaratish",
     "create_theme_modal_title": "Maxsus mavzu yaratish",
-    "create_theme_modal_description": "Hydra ko'rinishini sozlash uchun yangi mavzu yaratish",
+    "create_theme_modal_description": "Vapor ko'rinishini sozlash uchun yangi mavzu yaratish",
     "theme_name": "Nomi",
     "insert_theme_name": "Mavzu nomini kiriting",
     "set_theme": "Mavzuni o'rnatish",
@@ -334,7 +334,7 @@
     "repack_count_one": "{{count}} repak qo'shildi",
     "repack_count_other": "{{count}} repak qo'shildi",
     "new_update_available": "Yangi {{version}} versiyasi mavjud",
-    "restart_to_install_update": "Yangilanishni o'rnatish uchun Hydra'ni qayta ishga tushiring",
+    "restart_to_install_update": "Yangilanishni o'rnatish uchun Vapor'ni qayta ishga tushiring",
     "notification_achievement_unlocked_title": "{{game}} uchun yutuq ochildi",
     "notification_achievement_unlocked_body": "{{achievement}} va boshqa {{count}} ta yutuq ochildi",
     "new_friend_request_title": "Yangi do'stlik so'rovi",
@@ -343,7 +343,7 @@
     "game_extracted": "{{title}} muvaffaqiyatli arxivdan chiqarildi"
   },
   "system_tray": {
-    "open": "Hydra'ni ochish",
+    "open": "Vapor'ni ochish",
     "quit": "Chiqish"
   },
   "game_card": {
@@ -448,7 +448,7 @@
     "user_achievements": "{{displayName}}ning yutuqlari",
     "your_achievements": "Sizning yutuqlaringiz",
     "unlocked_at": "Ochilgan sana: {{date}}",
-    "subscription_needed": "Bu kontentni ko'rish uchun Hydra Cloud obunasi kerak",
+    "subscription_needed": "Bu kontentni ko'rish uchun Vapor Cloud obunasi kerak",
     "new_achievements_unlocked": "{{gameCount}} o'yindan {{achievementCount}} ta yangi yutuq ochildi",
     "achievement_progress": "{{unlockedCount}}/{{totalCount}} yutuq",
     "achievements_unlocked_for_game": "{{gameTitle}} uchun {{achievementCount}} ta yangi yutuq ochildi",
@@ -459,7 +459,7 @@
     "how_to_earn_achievements_points": "Yutuq ballarini qanday to'plash mumkin?"
   },
   "hydra_cloud": {
-    "subscription_tour_title": "Hydra Cloud obunasi",
+    "subscription_tour_title": "Vapor Cloud obunasi",
     "subscribe_now": "Hoziroq obuna bo'ling",
     "cloud_saving": "Bulutli saqlash",
     "cloud_achievements": "Yutuqlaringizni bulutda saqlang",
@@ -467,9 +467,12 @@
     "premium_support": "Premium qo'llab-quvvatlash",
     "show_and_compare_achievements": "Yutuqlaringizni boshqa foydalanuvchilarning yutuqlari bilan solishtiring va ko'rsating",
     "animated_profile_banner": "Animatsiyali profil banneri",
-    "hydra_cloud": "Hydra Cloud",
-    "hydra_cloud_feature_found": "Siz hozirgina Hydra Cloud funksiyasini kashf etdingiz!",
+    "hydra_cloud": "Vapor Cloud",
+    "hydra_cloud_feature_found": "Siz hozirgina Vapor Cloud funksiyasini kashf etdingiz!",
     "learn_more": "Batafsil ma'lumot",
     "debrid_description": "Nimbus bilan 4 barobar tezroq yuklab oling"
   }
 }
+
+
+

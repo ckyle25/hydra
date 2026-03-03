@@ -142,7 +142,7 @@
     "download": "Stáhnout",
     "executable_path_in_use": "Spustitelný soubor již používá \"{{game}}\"",
     "warning": "Varování",
-    "hydra_needs_to_remain_open": "Pro tohle stažení, musí Hydra zůstat otevřená až do konce stahování. Pokud Hydru zavřete dříve, postup stahování bude ztracen.",
+    "hydra_needs_to_remain_open": "Pro tohle stažení, musí Vapor zůstat otevřená až do konce stahování. Pokud Hydru zavřete dříve, postup stahování bude ztracen.",
     "achievements": "Achievementy",
     "achievements_count": "Achievementy {{unlockedCount}}/{{achievementsCount}}",
     "cloud_save": "Uložení v cloudu",
@@ -259,7 +259,7 @@
     "debrid_linked_message": "Účet \"{{username}}\" je propojen",
     "save_changes": "Uložit změny",
     "changes_saved": "Změny úspěšně uloženy",
-    "download_sources_description": "Hydra bude odsud sbírat soubory. Zdrojový odkaz musí být .json soubor obsahující odkazy na soubory.",
+    "download_sources_description": "Vapor bude odsud sbírat soubory. Zdrojový odkaz musí být .json soubor obsahující odkazy na soubory.",
     "validate_download_source": "Ověřit",
     "remove_download_source": "Odebrat",
     "add_download_source": "Přidat zdroj",
@@ -303,17 +303,17 @@
     "show_hidden_achievement_description": "Zobrazit popisy skrytých achievementů dříve, než jsou odemčeny",
     "account": "Účet",
     "no_users_blocked": "Nemáte žádného uživatele zablokovaného",
-    "subscription_active_until": "Vaše Hydra cloud předplatné je platné do {{date}}",
+    "subscription_active_until": "Vaše Vapor Cloud předplatné je platné do {{date}}",
     "manage_subscription": "Spravovat předplatné",
     "update_email": "Změnit email",
     "update_password": "Změnit heslo",
     "current_email": "Současný email:",
     "no_email_account": "Zatím nemáte nastavený email",
     "account_data_updated_successfully": "Data vašeho účtu byly úspěšně upraveny",
-    "renew_subscription": "Obnovit předplatné Hydra Cloud",
+    "renew_subscription": "Obnovit předplatné Vapor Cloud",
     "subscription_expired_at": "Vaše předplatné vypršelo {{date}}",
     "no_subscription": "Užijte si Hydru v nejlepší možné podobě",
-    "become_subscriber": "Připojit se k předplatnému Hydra Cloud",
+    "become_subscriber": "Připojit se k předplatnému Vapor Cloud",
     "subscription_renew_cancelled": "Automatické obnovování je zrušenu",
     "subscription_renews_on": "Vaše předplatné se obnoví {{date}}",
     "bill_sent_until": "Vaše příští faktura bude odeslána nejpozději do tohoto dne",
@@ -477,7 +477,7 @@
     "user_achievements": "Achievementy uživatele {{displayName}}",
     "your_achievements": "Vaše achievementy",
     "unlocked_at": "Odemčeno: {{date}}",
-    "subscription_needed": "Je vyžadováno předplatné Hydra Cloud pro zobrazení tohoto obsahu",
+    "subscription_needed": "Je vyžadováno předplatné Vapor Cloud pro zobrazení tohoto obsahu",
     "new_achievements_unlocked": "Odemčeno {{achievementCount}} nových achievementů z {{gameCount}} her",
     "achievement_progress": "{{unlockedCount}}/{{totalCount}} achievementů",
     "achievements_unlocked_for_game": "Odemčeno {{achievementCount}} nových achievementů pro {{gameTitle}}",
@@ -488,7 +488,7 @@
     "how_to_earn_achievements_points": "Jak získat body achievementů?"
   },
   "hydra_cloud": {
-    "subscription_tour_title": "Předplatné Hydra Cloud",
+    "subscription_tour_title": "Předplatné Vapor Cloud",
     "subscribe_now": "Připojit se",
     "cloud_saving": "Ukládání v cloudu",
     "cloud_achievements": "Ukládejte vaše achievementy do cloudu",
@@ -496,9 +496,12 @@
     "premium_support": "Prémiová podpora",
     "show_and_compare_achievements": "Zobraz a porovnej achievementy s ostatními uživateli",
     "animated_profile_banner": "Animovaný banner na profilu",
-    "hydra_cloud": "Hydra Cloud",
-    "hydra_cloud_feature_found": "Právě jste objevili funkci předplatného Hydra Cloud!",
+    "hydra_cloud": "Vapor Cloud",
+    "hydra_cloud_feature_found": "Právě jste objevili funkci předplatného Vapor Cloud!",
     "learn_more": "Zjistit více",
     "debrid_description": "Stahovat až 4x rychleji s Nimbus"
   }
 }
+
+
+

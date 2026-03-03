@@ -109,7 +109,7 @@
     "downloads_section_title": "Downloads",
     "downloads_section_description": "Undersøg opdateringer eller andre versioner af dette spil",
     "danger_zone_section_title": "Farezonen",
-    "danger_zone_section_description": "Fjern dette spil fra dit bibliotek eller filerne der er blevet downloadet af Hydra",
+    "danger_zone_section_description": "Fjern dette spil fra dit bibliotek eller filerne der er blevet downloadet af Vapor",
     "download_in_progress": "Download undervejs",
     "download_paused": "Download sat på pause",
     "last_downloaded_option": "Sidste download mulighed",
@@ -126,10 +126,10 @@
     "download": "Download",
     "executable_path_in_use": "Eksekverbar allerede i brug af \"{{game}}\"",
     "warning": "Advarsel:",
-    "hydra_needs_to_remain_open": "Hydra skal forblive åbent for at denne download kan gennemføres. I tilfælde af at Hydra lukker før downloaden er færdig, mister du dit fremskridt."
+    "hydra_needs_to_remain_open": "Vapor skal forblive åbent for at denne download kan gennemføres. I tilfælde af at Vapor lukker før downloaden er færdig, mister du dit fremskridt."
   },
   "activation": {
-    "title": "Aktivér Hydra",
+    "title": "Aktivér Vapor",
     "installation_id": "Installations ID:",
     "enter_activation_code": "Indtast din aktiverings kode",
     "message": "Hvis du ikke ved hvor du skal spørge om dette, burde du ikke have dette.",
@@ -158,7 +158,7 @@
     "downloads_completed": "Gennemførte",
     "queued": "I kø",
     "no_downloads_title": "Rimelig tomt",
-    "no_downloads_description": "Du har ikke downloadet noget med Hydra endnu, men det er aldrig for sent at begynde.",
+    "no_downloads_description": "Du har ikke downloadet noget med Vapor endnu, men det er aldrig for sent at begynde.",
     "checking_files": "Undersøger filer…"
   },
   "settings": {
@@ -168,8 +168,8 @@
     "enable_download_notifications": "Når en download bliver færdigt",
     "enable_repack_list_notifications": "Når en ny repack bliver tilføjet",
     "real_debrid_api_token_label": "Real-Debrid API nøgle",
-    "quit_app_instead_hiding": "Afslut Hydra instedet for at minimere til processlinjen",
-    "launch_with_system": "Åben Hydra ved start af systemet",
+    "quit_app_instead_hiding": "Afslut Vapor instedet for at minimere til processlinjen",
+    "launch_with_system": "Åben Vapor ved start af systemet",
     "general": "Generelt",
     "behavior": "Opførsel",
     "download_sources": "Download kilder",
@@ -183,7 +183,7 @@
     "debrid_linked_message": "Brugeren \"{{username}}\" er forbundet",
     "save_changes": "Gem ændringer",
     "changes_saved": "Ændringer gemt successfuldt",
-    "download_sources_description": "Hydra vil hente download links fra disse kilder. Kilde URLen skal være et direkte link til en .json fil der indeholder download linkene.",
+    "download_sources_description": "Vapor vil hente download links fra disse kilder. Kilde URLen skal være et direkte link til en .json fil der indeholder download linkene.",
     "validate_download_source": "Validér",
     "remove_download_source": "Fjern",
     "add_download_source": "Tilføj kilde",
@@ -228,10 +228,10 @@
     "repack_count_one": "{{count}} repack tilføjet",
     "repack_count_other": "{{count}} repacks tilføjet",
     "new_update_available": "Version {{version}} tilgængelig",
-    "restart_to_install_update": "Genstart Hydra for at installere opdateringen"
+    "restart_to_install_update": "Genstart Vapor for at installere opdateringen"
   },
   "system_tray": {
-    "open": "Åben Hydra",
+    "open": "Åben Vapor",
     "quit": "Afslut"
   },
   "game_card": {
@@ -316,3 +316,6 @@
     "profile_reported": "Profil rapporteret"
   }
 }
+
+
+

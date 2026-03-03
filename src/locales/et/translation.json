@@ -110,7 +110,7 @@
     "downloads_section_title": "Allalaadimised",
     "downloads_section_description": "Vaata uuendusi või selle mängu teisi versioone",
     "danger_zone_section_title": "Ohutsoon",
-    "danger_zone_section_description": "Eemalda see mäng oma kogust või Hydra poolt allalaaditud failid",
+    "danger_zone_section_description": "Eemalda see mäng oma kogust või Vapor poolt allalaaditud failid",
     "download_in_progress": "Allalaadimine käimas",
     "download_paused": "Allalaadimine peatatud",
     "last_downloaded_option": "Viimane allalaaditud variant",
@@ -127,7 +127,7 @@
     "download": "Laadi alla",
     "executable_path_in_use": "Käivitusfail on juba kasutusel mängus \"{{game}}\"",
     "warning": "Hoiatus:",
-    "hydra_needs_to_remain_open": "selle allalaadimise jaoks peab Hydra jääma avatuks kuni lõpuni. Kui Hydra sulgub enne lõppu, kaotad oma progressi.",
+    "hydra_needs_to_remain_open": "selle allalaadimise jaoks peab Vapor jääma avatuks kuni lõpuni. Kui Vapor sulgub enne lõppu, kaotad oma progressi.",
     "achievements": "Saavutused",
     "achievements_count": "Saavutused {{unlockedCount}}/{{achievementsCount}}",
     "cloud_save": "Pilvesalvestus",
@@ -165,7 +165,7 @@
     "custom_backup_location_set": "Kohandatud varundamise asukoht määratud"
   },
   "activation": {
-    "title": "Aktiveeri Hydra",
+    "title": "Aktiveeri Vapor",
     "installation_id": "Installatsiooni ID:",
     "enter_activation_code": "Sisesta oma aktiveerimiskood",
     "message": "Kui sa ei tea, kust seda küsida, siis sa ei peaks seda omama.",
@@ -194,7 +194,7 @@
     "downloads_completed": "Lõpetatud",
     "queued": "Järjekorras",
     "no_downloads_title": "Nii tühi",
-    "no_downloads_description": "Sa pole veel Hydraga midagi alla laadinud, aga pole kunagi hilja alustada.",
+    "no_downloads_description": "Sa pole veel Vaporga midagi alla laadinud, aga pole kunagi hilja alustada.",
     "checking_files": "Failide kontrollimine…"
   },
   "settings": {
@@ -204,8 +204,8 @@
     "enable_download_notifications": "Kui allalaadimine on lõpetatud",
     "enable_repack_list_notifications": "Kui uus repack on lisatud",
     "real_debrid_api_token_label": "Real-Debrid API võti",
-    "quit_app_instead_hiding": "Ära peida Hydrat sulgemisel",
-    "launch_with_system": "Käivita Hydra süsteemi käivitamisel",
+    "quit_app_instead_hiding": "Ära peida Vaport sulgemisel",
+    "launch_with_system": "Käivita Vapor süsteemi käivitamisel",
     "general": "Üldine",
     "behavior": "Käitumine",
     "download_sources": "Allalaadimise allikad",
@@ -219,7 +219,7 @@
     "debrid_linked_message": "Konto \"{{username}}\" ühendatud",
     "save_changes": "Salvesta muudatused",
     "changes_saved": "Muudatused edukalt salvestatud",
-    "download_sources_description": "Hydra laeb allalaadimise lingid nendest allikatest. Allika URL peab olema otsene link .json failile, mis sisaldab allalaadimise linke.",
+    "download_sources_description": "Vapor laeb allalaadimise lingid nendest allikatest. Allika URL peab olema otsene link .json failile, mis sisaldab allalaadimise linke.",
     "validate_download_source": "Valideeri",
     "remove_download_source": "Eemalda",
     "add_download_source": "Lisa allikas",
@@ -265,12 +265,12 @@
     "repack_count_one": "{{count}} repack lisatud",
     "repack_count_other": "{{count}} repacki lisatud",
     "new_update_available": "Versioon {{version}} saadaval",
-    "restart_to_install_update": "Taaskäivita Hydra uuenduse installimiseks",
+    "restart_to_install_update": "Taaskäivita Vapor uuenduse installimiseks",
     "notification_achievement_unlocked_title": "Saavutus avatud mängus {{game}}",
     "notification_achievement_unlocked_body": "{{achievement}} ja veel {{count}} avati"
   },
   "system_tray": {
-    "open": "Ava Hydra",
+    "open": "Ava Vapor",
     "quit": "Välju"
   },
   "game_card": {
@@ -363,11 +363,11 @@
     "user_achievements": "{{displayName}} saavutused",
     "your_achievements": "Sinu saavutused",
     "unlocked_at": "Avatud: {{date}}",
-    "subscription_needed": "Selle sisu nägemiseks on vaja Hydra Cloud tellimust",
+    "subscription_needed": "Selle sisu nägemiseks on vaja Vapor Cloud tellimust",
     "new_achievements_unlocked": "Avatud {{achievementCount}} uut saavutust {{gameCount}} mängust"
   },
   "hydra_cloud": {
-    "subscription_tour_title": "Hydra Cloud Tellimus",
+    "subscription_tour_title": "Vapor Cloud Tellimus",
     "subscribe_now": "Telli kohe",
     "cloud_saving": "Pilvesalvestus",
     "cloud_achievements": "Salvesta oma saavutused pilve",
@@ -377,3 +377,6 @@
     "animated_profile_banner": "Animeeritud profiilibänner"
   }
 }
+
+
+

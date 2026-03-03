@@ -3,13 +3,20 @@
 .modal {
   animation: scale-fade-in 0.2s cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none
     running;
-  background-color: globals.$background-color;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(77, 216, 245, 0.08) 0%,
+      rgba(19, 35, 57, 0) 22%
+    ),
+    globals.$background-color;
   border-radius: 4px;
   min-width: 400px;
   max-width: 600px;
   color: globals.$body-color;
   max-height: 100%;
-  border: solid 1px globals.$border-color;
+  border: solid 1px rgba(136, 229, 255, 0.32);
+  box-shadow: 0 10px 32px rgba(4, 11, 24, 0.45);
   overflow: hidden;
   display: flex;
   flex-direction: column;

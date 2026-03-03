@@ -82,10 +82,10 @@
     "install_decky_plugin": "Decky Plugin Telepítése",
     "update_decky_plugin": "Decky Plugin Frissítése",
     "decky_plugin_installed_version": "Decky Plugin (v{{version}})",
-    "install_decky_plugin_title": "Telepítsd a Hydra Decky Plugint",
-    "install_decky_plugin_message": "Ez letölti és telepíti a Hydra plugint a Decky Loaderhez. Előfordulhat, hogy rendszergazdai jogosultságra lesz szükség. Folytatod?",
-    "update_decky_plugin_title": "Hydra Decky Plugin Frissítése",
-    "update_decky_plugin_message": "Egy új verzió elérhető a Hydra Decky Pluginhoz. Szeretnéd frissíteni?",
+    "install_decky_plugin_title": "Telepítsd a Vapor Decky Plugint",
+    "install_decky_plugin_message": "Ez letölti és telepíti a Vapor plugint a Decky Loaderhez. Előfordulhat, hogy rendszergazdai jogosultságra lesz szükség. Folytatod?",
+    "update_decky_plugin_title": "Vapor Decky Plugin Frissítése",
+    "update_decky_plugin_message": "Egy új verzió elérhető a Vapor Decky Pluginhoz. Szeretnéd frissíteni?",
     "decky_plugin_installed": "Decky plugin v{{version}} sikeresen telepítve",
     "decky_plugin_installation_failed": "Decky plugin telepítése sikertelen: {{error}}",
     "decky_plugin_installation_error": "Decky plugin telepítése hibával járt el: {{error}}",
@@ -208,7 +208,7 @@
     "downloads_section_title": "Letöltések",
     "downloads_section_description": "Csekkold le a játék frissítéseit vagy más verzióit",
     "danger_zone_section_title": "Veszélyzóna",
-    "danger_zone_section_description": "Itt eltávolítható a játék a könyvtáradból, vagy a fájlok amelyek a Hydra által lettek letöltve",
+    "danger_zone_section_description": "Itt eltávolítható a játék a könyvtáradból, vagy a fájlok amelyek a Vapor által lettek letöltve",
     "download_in_progress": "Letöltés folyamatban",
     "download_paused": "Letöltés szüneteltetve",
     "extracting": "Kicsomagolás",
@@ -237,7 +237,7 @@
     "download": "Letöltés",
     "executable_path_in_use": "Ez a futtatható fájl már használatban van a(z) \"{{game}}\" által",
     "warning": "Figyelmeztetés:",
-    "hydra_needs_to_remain_open": "ehhez a letöltéshez, a Hydrának muszáj nyitva maradnia hogy letöltődjön. Ha a Hydra bezáródik letöltés előtt, a letöltés elveszik.",
+    "hydra_needs_to_remain_open": "ehhez a letöltéshez, a Hydrának muszáj nyitva maradnia hogy letöltődjön. Ha a Vapor bezáródik letöltés előtt, a letöltés elveszik.",
     "achievements": "Achievementek",
     "achievements_count": "Achievementek {{unlockedCount}}/{{achievementsCount}}",
     "show_more": "Mutass többet",
@@ -388,7 +388,7 @@
     "hide": "Elrejtés"
   },
   "activation": {
-    "title": "Hydra Aktiválása",
+    "title": "Vapor Aktiválása",
     "installation_id": "Telepítési Azonosító:",
     "enter_activation_code": "Írd be az aktiválási kódod",
     "message": "Ha nem tudod merre kérdezz efelől, akkor nem kéne ilyened legyen.",
@@ -417,7 +417,7 @@
     "downloads_completed": "Befejezett",
     "queued": "Várakozásban",
     "no_downloads_title": "Oly üres..",
-    "no_downloads_description": "Még nem töltöttél le semmit a Hydra segítségével, de soha nem késő elkezdeni.",
+    "no_downloads_description": "Még nem töltöttél le semmit a Vapor segítségével, de soha nem késő elkezdeni.",
     "checking_files": "Fájlok ellenőrzése…",
     "seeding": "Seedelés",
     "stop_seeding": "Seedelés leállítása",
@@ -439,8 +439,8 @@
     "enable_download_notifications": "Amikor egy letöltés befejeződik",
     "enable_repack_list_notifications": "Amikor új repack kerül feltöltésre",
     "real_debrid_api_token_label": "Real-Debrid API token",
-    "quit_app_instead_hiding": "Hydra elrejtésének tiltása bezáráskor",
-    "launch_with_system": "Hydra automatikus indítása rendszer indításakor",
+    "quit_app_instead_hiding": "Vapor elrejtésének tiltása bezáráskor",
+    "launch_with_system": "Vapor automatikus indítása rendszer indításakor",
     "general": "Általános",
     "behavior": "Működés",
     "download_sources": "Letöltési források",
@@ -454,7 +454,7 @@
     "debrid_linked_message": "Fiók összekapcsolva: \"{{username}}\" ",
     "save_changes": "Változtatások mentése",
     "changes_saved": "Változtatások sikeresen mentve",
-    "download_sources_description": "A Hydra lefogja tölteni a letöltési linkeket a forrásokból, ennek az URL Forrásnak közvetlen linknek kell lennie egy .json fájlhoz, ami tartalmazza a linkeket.",
+    "download_sources_description": "A Vapor lefogja tölteni a letöltési linkeket a forrásokból, ennek az URL Forrásnak közvetlen linknek kell lennie egy .json fájlhoz, ami tartalmazza a linkeket.",
     "validate_download_source": "Érvényesítés",
     "remove_download_source": "Eltávolítás",
     "add_download_source": "Forrás hozáadása",
@@ -503,24 +503,24 @@
     "blocked_users": "Letiltott felhasználók",
     "user_unblocked": "Felhasználó letiltva",
     "enable_achievement_notifications": "Amikor egy achievement feloldódik",
-    "launch_minimized": "Hydra indítása minimalizálva",
+    "launch_minimized": "Vapor indítása minimalizálva",
     "disable_nsfw_alert": "NSFW figyelmeztetés kikapcsolása",
     "seed_after_download_complete": "Letöltés utáni seedelés",
     "show_hidden_achievement_description": "Rejtett achievementek leírásának megjelenítése feloldás előtt",
     "account": "Fiók",
-    "hydra_cloud": "Hydra Cloud",
+    "hydra_cloud": "Vapor Cloud",
     "no_users_blocked": "Nincsenek letiltott felhasználóid",
-    "subscription_active_until": "Hydra Cloud előfizetésed aktív, eddig: {{date}}",
+    "subscription_active_until": "Vapor Cloud előfizetésed aktív, eddig: {{date}}",
     "manage_subscription": "Előfizetés kezelése",
     "update_email": "Email változtatása",
     "update_password": "Jelszó változtatása",
     "current_email": "Jelenlegi email:",
     "no_email_account": "Még nincs beállított emailed",
     "account_data_updated_successfully": "Fiókadatok változtatása sikeres",
-    "renew_subscription": "Hydra Cloud Megújítása",
+    "renew_subscription": "Vapor Cloud Megújítása",
     "subscription_expired_at": "Az előfizetésed lejárt: {{date}}",
     "no_subscription": "Élvezd a Hydrát a lehető legjobb módon",
-    "become_subscriber": "Légy Hydra Cloud tag",
+    "become_subscriber": "Légy Vapor Cloud tag",
     "subscription_renew_cancelled": "Automatikus megújítás kikapcsolva",
     "subscription_renews_on": "Az előfizetésed megújul: {{date}}",
     "bill_sent_until": "A következő számlát ezen napon küldjük",
@@ -594,7 +594,7 @@
     "notification_preview": "Achievement Értesítés Előnézete",
     "enable_friend_start_game_notifications": "Amikor egy barátod elkezd játszani egy játékot",
     "autoplay_trailers_on_game_page": "Játékelőzetes automatikus lejátszása a játék oldalán",
-    "hide_to_tray_on_game_start": "Hydra elrejtése játék indításakor a tálcára"
+    "hide_to_tray_on_game_start": "Vapor elrejtése játék indításakor a tálcára"
   },
   "notifications": {
     "download_complete": "Letöltés befejezve",
@@ -615,7 +615,7 @@
     "test_achievement_notification_description": "Elég menő, mi?"
   },
   "system_tray": {
-    "open": "Hydra megnyitása",
+    "open": "Vapor megnyitása",
     "quit": "Kilépés"
   },
   "game_card": {
@@ -768,7 +768,7 @@
     "user_achievements": "{{displayName}} achievementjei",
     "your_achievements": "A te achievementjeid",
     "unlocked_at": "Feloldva: {{date}}",
-    "subscription_needed": "A tartalom megtekintéséhez Hydra Cloud előfizetés szükséges",
+    "subscription_needed": "A tartalom megtekintéséhez Vapor Cloud előfizetés szükséges",
     "new_achievements_unlocked": "{{achievementCount}} új achievement feloldva {{gameCount}} játékban",
     "achievement_progress": "{{unlockedCount}}/{{totalCount}} achievement",
     "achievements_unlocked_for_game": "{{achievementCount}} új achievement feloldva itt: {{gameTitle}}",
@@ -779,7 +779,7 @@
     "how_to_earn_achievements_points": "Hogy lehet elérni achievement pontokat?"
   },
   "hydra_cloud": {
-    "subscription_tour_title": "Hydra Cloud Előfizetés",
+    "subscription_tour_title": "Vapor Cloud Előfizetés",
     "subscribe_now": "Előfizetés",
     "cloud_saving": "Felhőmentés",
     "cloud_achievements": "Mentsd az achievementjeid el a felhőben",
@@ -787,8 +787,8 @@
     "premium_support": "Premium Támogatás",
     "show_and_compare_achievements": "Jelenítsd és hasonlítsd az elért achievementjeid másokéhoz",
     "animated_profile_banner": "Animált profil borítókép",
-    "hydra_cloud": "Hydra Cloud",
-    "hydra_cloud_feature_found": "Épp felfedeztél egy Hydra Cloud funkciót!",
+    "hydra_cloud": "Vapor Cloud",
+    "hydra_cloud_feature_found": "Épp felfedeztél egy Vapor Cloud funkciót!",
     "learn_more": "Tudj meg többet",
     "debrid_description": "Akár 4x gyorsabb letöltés a Nimbusszal"
   },
@@ -829,3 +829,6 @@
     "friend_request_refused": "Barátfelkérés elutasítva"
   }
 }
+
+
+

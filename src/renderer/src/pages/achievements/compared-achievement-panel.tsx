@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import HydraIcon from "@renderer/assets/icons/hydra.svg?react";
+import VaporIcon from "@renderer/assets/icons/vapor.svg?react";
 import { ComparedAchievements } from "@types";
 import { useUserDetails } from "@renderer/hooks";
 import "./achievement-panel.scss";
@@ -24,19 +24,20 @@ export function ComparedAchievementPanel({
     >
       <div className="achievement-panel__points-container">
         {t("available_points")}{" "}
-        <HydraIcon className="achievement-panel__content-icon" />{" "}
+        <VaporIcon className="achievement-panel__content-icon" />{" "}
         {achievements.achievementsPointsTotal}
       </div>
       {hasActiveSubscription && (
         <div className="achievement-panel__content">
-          <HydraIcon className="achievement-panel__content-icon" />
+          <VaporIcon className="achievement-panel__content-icon" />
           {achievements.owner.achievementsPointsEarnedSum ?? 0}
         </div>
       )}
       <div className="achievement-panel__content">
-        <HydraIcon className="achievement-panel__content-icon" />
+        <VaporIcon className="achievement-panel__content-icon" />
         {achievements.target.achievementsPointsEarnedSum}
       </div>
     </div>
   );
 }
+

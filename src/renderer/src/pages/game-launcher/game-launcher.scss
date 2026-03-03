@@ -5,7 +5,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+  background: linear-gradient(135deg, #0b1526 0%, #142846 48%, #1c2f58 100%);
   -webkit-app-region: drag;
   padding: calc(globals.$spacing-unit * 3);
   box-sizing: border-box;
@@ -34,9 +34,9 @@
     bottom: 0;
     background: linear-gradient(
       135deg,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.85) 50%,
-      rgba(0, 0, 0, 0.9) 100%
+      rgba(8, 18, 35, 0.65) 0%,
+      rgba(10, 24, 48, 0.78) 50%,
+      rgba(11, 26, 52, 0.84) 100%
     );
     pointer-events: none;
     z-index: 1;
@@ -50,7 +50,8 @@
     bottom: 0;
     background: radial-gradient(
       ellipse at top right,
-      rgba(22, 177, 149, 0.15) 0%,
+      rgba(77, 216, 245, 0.22) 0%,
+      rgba(108, 123, 255, 0.14) 30%,
       transparent 50%
     );
     pointer-events: none;
@@ -229,3 +230,4 @@
     }
   }
 }
+

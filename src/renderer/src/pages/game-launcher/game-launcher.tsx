@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ImageIcon, ClockIcon, TrophyIcon } from "@primer/octicons-react";
-import HydraIcon from "@renderer/assets/icons/hydra.svg?react";
+import VaporIcon from "@renderer/assets/icons/vapor.svg?react";
 import { MAX_MINUTES_TO_SHOW_IN_PLAYTIME } from "@renderer/constants";
 import { darkenColor } from "@renderer/helpers";
 import { logger } from "@renderer/logger";
@@ -216,7 +216,7 @@ export default function GameLauncher() {
       <div className="game-launcher__glow" style={glowStyle} />
 
       <div className="game-launcher__logo-badge">
-        <HydraIcon />
+        <VaporIcon />
       </div>
 
       <div className="game-launcher__content">
@@ -287,3 +287,4 @@ export default function GameLauncher() {
     </div>
   );
 }
+

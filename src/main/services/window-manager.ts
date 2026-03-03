@@ -684,7 +684,7 @@ export class WindowManager {
       tray.popUpContextMenu(contextMenu);
     };
 
-    tray.setToolTip("Hydra Launcher");
+    tray.setToolTip("Vapor Launcher");
 
     if (process.platform === "win32") {
       await updateSystemTray();
@@ -716,3 +716,4 @@ export class WindowManager {
     }
   }
 }
+

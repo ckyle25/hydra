@@ -10,16 +10,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(12, 30, 55, 0.45);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(123, 177, 255, 0.35);
   border-radius: 24px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(123, 177, 255, 0.55);
 }
 
 html,
@@ -109,11 +109,17 @@ progress[value] {
     flex-direction: column;
     position: relative;
     height: 100%;
-    background: linear-gradient(
-      0deg,
-      globals.$dark-background-color 50%,
-      globals.$background-color 100%
-    );
+    background:
+      radial-gradient(
+        120% 80% at 100% 0%,
+        rgba(77, 216, 245, 0.15) 0%,
+        transparent 55%
+      ),
+      linear-gradient(
+        0deg,
+        globals.$dark-background-color 45%,
+        globals.$background-color 100%
+      );
   }
 }
 
@@ -130,8 +136,9 @@ progress[value] {
   border-bottom: 1px solid globals.$border-color;
 
   &__cloud-text {
-    background: linear-gradient(270deg, #16b195 50%, #3e62c0 100%);
+    background: linear-gradient(270deg, #4dd8f5 50%, #6c7bff 100%);
     background-clip: text;
     color: transparent;
   }
 }
+

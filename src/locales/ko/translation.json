@@ -72,7 +72,7 @@
     "download_now": "지금 다운로드"
   },
   "activation": {
-    "title": "Hydra 실행",
+    "title": "Vapor 실행",
     "installation_id": "설치 ID:",
     "enter_activation_code": "활성 코드를 입력하세요",
     "message": "이것을 어디에서 구해야 할 지 모르겠다면 애초에 갖고 있으면 안 됩니다.",
@@ -102,8 +102,8 @@
     "notifications": "알림",
     "enable_download_notifications": "다운로드가 완료되었을 때",
     "enable_repack_list_notifications": "새 리팩이 추가되었을 때",
-    "quit_app_instead_hiding": "작업 표시줄 트레이로 최소화하는 대신 Hydra를 종료",
-    "launch_with_system": "컴퓨터가 시작되었을 때 Hydra 실행",
+    "quit_app_instead_hiding": "작업 표시줄 트레이로 최소화하는 대신 Vapor를 종료",
+    "launch_with_system": "컴퓨터가 시작되었을 때 Vapor 실행",
     "general": "일반",
     "behavior": "행동",
     "cancel_button_confirmation_delete_all_sources": "아니요",
@@ -124,7 +124,7 @@
     "repack_count_other": "{{count}}개의 리팩들이 추가됨"
   },
   "system_tray": {
-    "open": "Hydra 열기",
+    "open": "Vapor 열기",
     "quit": "닫기"
   },
   "game_card": {
@@ -139,3 +139,6 @@
     "close": "닫기 버튼"
   }
 }
+
+
+

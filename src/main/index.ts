@@ -65,6 +65,11 @@ if (process.defaultApp) {
 app.whenReady().then(async () => {
   electronApp.setAppUserModelId("gg.hydralauncher.hydra");
 
+  // Open DB early so startup services can safely query state.
+  if (db.status !== "open") {
+    await db.open();
+  }
+
   protocol.handle("local", (request) => {
     const filePath = request.url.slice("local:".length);
     return net.fetch(url.pathToFileURL(decodeURI(filePath)).toString());

@@ -342,7 +342,7 @@ export function App() {
       {window.electron.platform === "win32" && (
         <div className="title-bar">
           <h4>
-            Hydra
+            Vapor
             {hasActiveSubscription && (
               <span className="title-bar__cloud-text"> Cloud</span>
             )}
@@ -417,3 +417,4 @@ export function App() {
     </>
   );
 }
+
